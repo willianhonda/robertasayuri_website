@@ -23,7 +23,7 @@
 
   /* Tipografia */
   --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-script:  "Dancing Script", "Brush Script MT", cursive;
+  --font-script:  "Cormorant Garamond", Georgia, serif;
   --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono:    "JetBrains Mono", monospace;
 
@@ -156,10 +156,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 .script {
-  font-family: var(--font-script);
+  font-family: var(--font-display);
+  font-style: italic;
   font-weight: 500;
   color: var(--color-bordeaux);
-  font-size: 1.4em;
+  font-size: 1.05em;
   line-height: 1;
 }
 
@@ -239,11 +240,19 @@ p:last-child { margin-bottom: 0; }
 }
 
 .nav__brand-name {
-  font-family: var(--font-script);
-  font-size: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
   color: var(--color-bordeaux);
   font-weight: 500;
   line-height: 1;
+}
+
+.nav__brand-name-img {
+  display: block;
+  height: 22px;
+  width: auto;
+  margin-bottom: 3px;
 }
 
 .nav__brand-tag {
@@ -566,15 +575,9 @@ p:last-child { margin-bottom: 0; }
 .hero__visual-badge-mark {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background: var(--color-bordeaux);
-  color: var(--color-cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-script);
-  font-size: 1.3rem;
   flex-shrink: 0;
+  display: block;
+  object-fit: contain;
 }
 
 .hero__visual-badge-text {
@@ -953,9 +956,17 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer-brand__name {
-  font-family: var(--font-script);
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
   color: var(--color-cream);
+  margin-bottom: var(--space-2xs);
+}
+
+.footer-brand__name-img {
+  display: block;
+  height: 36px;
+  width: auto;
   margin-bottom: var(--space-2xs);
 }
 

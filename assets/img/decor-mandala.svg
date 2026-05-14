@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none" aria-hidden="true">
+  <g stroke="#FFFDFA" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Círculo guia externo -->
+    <circle cx="120" cy="120" r="92" opacity="0.25" stroke-dasharray="2 4"/>
+
+    <!-- Folhas em mandala - 8 pétalas/folhas alongadas -->
+    <g opacity="0.7" transform="translate(120 120)">
+      <!-- Folha 1 (12h) -->
+      <g>
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+      <!-- Folha 2 (3h) -->
+      <g transform="rotate(45)">
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+      <g transform="rotate(90)">
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+      <g transform="rotate(135)">
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+      <g transform="rotate(180)">
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+      <g transform="rotate(225)">
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+      <g transform="rotate(270)">
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+      <g transform="rotate(315)">
+        <path d="M0 -85 Q -8 -55, 0 -25 Q 8 -55, 0 -85 Z"/>
+        <line x1="0" y1="-80" x2="0" y2="-30" opacity="0.5"/>
+      </g>
+    </g>
+
+    <!-- Centro: flor pequena -->
+    <g opacity="0.85" transform="translate(120 120)">
+      <circle r="4"/>
+      <g>
+        <circle cx="0" cy="-12" r="3.5"/>
+        <circle cx="11.4" cy="-3.7" r="3.5"/>
+        <circle cx="7" cy="9.7" r="3.5"/>
+        <circle cx="-7" cy="9.7" r="3.5"/>
+        <circle cx="-11.4" cy="-3.7" r="3.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
