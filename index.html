@@ -1,312 +1,479 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Roberta Sayuri | Dermatologista</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            color: #1a1a1a;
-            background: #fafafa;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 100px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 4em;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease;
-        }
-        header p {
-            font-size: 1.2em;
-            color: #e8e8e8;
-            margin-top: 15px;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 1;
-            font-weight: 300;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        nav {
-            background: #ffffff;
-            text-align: center;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-        }
-        nav a {
-            color: #1a1a2e;
-            margin: 0 30px;
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.85em;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 5px 0;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            transition: width 0.3s ease;
-        }
-        nav a:hover::after {
-            width: 100%;
-        }
-        nav a:hover {
-            color: #667eea;
-        }
-        section {
-            padding: 90px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3em;
-            color: #1a1a2e;
-            margin-bottom: 40px;
-            text-align: center;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 20px;
-        }
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-        .about {
-            background: white;
-            border-radius: 20px;
-            padding: 60px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-        }
-        .about p {
-            font-size: 1.15em;
-            line-height: 1.9;
-            color: #4a4a4a;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-        .services {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
-        }
-        .services h2 {
-            color: #ffffff;
-        }
-        .services h2::after {
-            background: white;
-        }
-        .services ul {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        .services li {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 35px 30px;
-            border-radius: 15px;
-            border: none;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            font-size: 1.05em;
-            color: #1a1a2e;
-            font-weight: 500;
-            backdrop-filter: blur(10px);
-        }
-        .services li::before {
-            content: '✦';
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5em;
-            color: #667eea;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        .services li:hover::before {
-            opacity: 1;
-            left: 15px;
-        }
-        .services li:hover {
-            transform: translateX(10px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-            background: white;
-            padding-left: 50px;
-        }
-        .contact {
-            background: white;
-            border-radius: 20px;
-            padding: 60px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-            max-width: 800px;
-            margin: auto;
-        }
-        .contact h2::after {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        }
-        .contact p {
-            font-size: 1.1em;
-            margin: 20px 0;
-            color: #4a4a4a;
-            padding: 15px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .contact p:last-of-type {
-            border-bottom: none;
-        }
-        .contact strong {
-            color: #1a1a2e;
-            font-weight: 600;
-            display: inline-block;
-            min-width: 120px;
-        }
-        .contact a {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        .contact a:hover {
-            color: #764ba2;
-        }
-        footer {
-            background: #1a1a2e;
-            color: #e8e8e8;
-            text-align: center;
-            padding: 50px 20px;
-            margin-top: 80px;
-            font-size: 0.95em;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-            nav a {
-                margin: 0 15px;
-                font-size: 0.75em;
-            }
-            section {
-                padding: 60px 20px;
-            }
-            .about, .contact {
-                padding: 40px 30px;
-            }
-            .services {
-                padding: 40px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFDFA">
+
+  <title>Dra. Roberta Sayuri — Médica | Cuidados com a pele em Guaianases, Zona Leste/SP</title>
+  <meta name="description" content="Consultório médico em Guaianases, Zona Leste de São Paulo. Atendimento dedicado a saúde e estética da pele, cabelos e unhas, com responsabilidade médica. Agende pelo WhatsApp.">
+
+  <link rel="canonical" href="https://www.robertasayuri.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Dra. Roberta Sayuri">
+  <meta property="og:title" content="Dra. Roberta Sayuri — Médica em Guaianases">
+  <meta property="og:description" content="Consultas e procedimentos para a saúde e estética da pele, cabelos e unhas, em Guaianases — Zona Leste de São Paulo.">
+  <meta property="og:url" content="https://www.robertasayuri.com.br/">
+  <meta property="og:image" content="https://www.robertasayuri.com.br/assets/img/og-cover.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dra. Roberta Sayuri — Médica em Guaianases">
+  <meta name="twitter:description" content="Cuidados com a pele, cabelos e unhas — com responsabilidade médica. Guaianases, SP.">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/img/favicon.svg">
+
+  <!-- Fonts (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": "https://www.robertasayuri.com.br/#consultorio",
+    "name": "Consultório Dra. Roberta Sayuri",
+    "image": "https://www.robertasayuri.com.br/assets/img/og-cover.png",
+    "url": "https://www.robertasayuri.com.br/",
+    "telephone": "+55-11-98281-9473",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Saturnino Pereira, 317",
+      "addressLocality": "Guaianases",
+      "addressRegion": "SP",
+      "postalCode": "08411-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.5410,
+      "longitude": -46.4218
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ],
+    "areaServed": [
+      {"@type": "City", "name": "São Paulo"},
+      {"@type": "Place", "name": "Guaianases"},
+      {"@type": "Place", "name": "Vila Santa Cruz"},
+      {"@type": "Place", "name": "Itaim Paulista"},
+      {"@type": "Place", "name": "Lajeado"},
+      {"@type": "Place", "name": "José Bonifácio"},
+      {"@type": "Place", "name": "Cidade Tiradentes"}
+    ],
+    "physician": {
+      "@type": "Physician",
+      "@id": "https://www.robertasayuri.com.br/sobre/#medica",
+      "name": "Dra. Roberta Sayuri",
+      "identifier": "CRM-SP 213495",
+      "gender": "Female",
+      "medicalSpecialty": "GeneralPractice"
+    }
+  }
+  </script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-    <header>
-        <h1>Dra. Roberta Sayuri</h1>
-        <p>Médica Dermatologista • CRM 123456</p>
-    </header>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav__brand" href="/" aria-label="Página inicial — Dra. Roberta Sayuri">
+          <img src="/assets/img/logo-rs.svg" alt="" class="nav__brand-mark" width="44" height="44">
+          <span class="nav__brand-text">
+            <span class="nav__brand-name">Roberta Sayuri</span>
+            <span class="nav__brand-tag">Médica · CRM-SP 213495</span>
+          </span>
+        </a>
 
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
-    </nav>
-
-<section id="sobre" class="about">
-    <h2>Sobre a Dra. Roberta</h2>
-    <p>
-        A Dra. Roberta Sayuri é médica formada pela <strong>Universidade de Vassouras</strong> e está em fase de conclusão da especialização em <strong>Dermatologia Clínica e Cosmética pela Inspirali</strong>.
-    </p>
-</section>
-
-    <section id="servicos" class="services">
-        <h2>Serviços</h2>
-        <ul>
-            <li>Consultas Dermatológicas</li>
-            <li>Tratamento de Acne e Manchas</li>
-            <li>Botox e Preenchimento</li>
-            <li>Peeling Químico</li>
-            <li>Dermatologia Infantil</li>
-            <li>Cirurgias de Pele (remoção de pintas, cistos, etc.)</li>
+        <ul class="nav__menu" data-nav-menu>
+          <li><a class="nav__link" href="/">Início</a></li>
+          <li><a class="nav__link" href="/sobre/">Sobre</a></li>
+          <li><a class="nav__link" href="/atendimentos/">Atendimentos</a></li>
+          <li><a class="nav__link" href="/blog/">Blog</a></li>
+          <li><a class="nav__link" href="/contato/">Contato</a></li>
+          <li>
+            <a class="nav__cta" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-source="header">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
+              Agendar
+            </a>
+          </li>
         </ul>
+
+        <button class="nav__toggle" data-nav-toggle aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__decor"></div>
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content reveal">
+            <div class="hero__eyebrow">
+              <span class="hero__eyebrow-line"></span>
+              <span class="eyebrow" style="margin: 0;">Consultório em Guaianases</span>
+            </div>
+            <h1 class="hero__title">
+              Cuidar da pele<br>
+              é um <em>gesto de saúde</em>.
+            </h1>
+            <p class="hero__subtitle">
+              Atendimento médico dedicado à saúde e estética da pele, cabelos e unhas,
+              com escuta atenta e plano de cuidado personalizado.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-source="hero">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
+                Agendar pelo WhatsApp
+              </a>
+              <a class="btn btn--ghost" href="/atendimentos/">Conhecer atendimentos</a>
+            </div>
+
+            <div class="hero__meta">
+              <span class="hero__meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                Vila Santa Cruz · Guaianases
+              </span>
+              <span class="hero__meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Seg a Sex · 9h às 19h
+              </span>
+              <span class="hero__meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 6 9-6M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l2-2h14l2 2"/></svg>
+                Agendamento por WhatsApp
+              </span>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" aria-hidden="true">
+            <div class="hero__visual-placeholder">
+              <img src="/assets/img/placeholder-portrait.svg" alt="">
+            </div>
+            <div class="hero__visual-badge">
+              <span class="hero__visual-badge-mark">RS</span>
+              <span class="hero__visual-badge-text">
+                <strong>Dra. Roberta Sayuri</strong>
+                Médica · CRM-SP 213495
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contato" class="contact">
-        <h2>Marque agora a sua consulta:</h2>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5511975796156" target="_blank">(11) 97579-6156</a></p>
-        <p><strong>E-mail:</strong> contato@robertasayuri.com.br</p>
-        <p><strong>Endereço:</strong> Rua Saturnino Pereira, 317 Guaianases, São Paulo - SP, 08411-000</p>
-        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/roberta.honda/" target="_blank">@roberta.honda</a>
-</p>
+    <!-- PILARES -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Por que escolher este consultório</span>
+          <h2>Um cuidado que olha para você por inteiro</h2>
+          <p>Cada paciente tem sua história, sua rotina e seu tipo de pele. O atendimento começa pela escuta — só depois vêm as condutas.</p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <h4>Pertinho de você</h4>
+            <p>No coração de Guaianases, fácil acesso pela Av. Nordestina e estação CPTM.</p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/></svg>
+            </div>
+            <h4>Conduta médica</h4>
+            <p>Avaliação clínica criteriosa antes de qualquer indicação de procedimento ou tratamento.</p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-6-4-9-10c-2-4 1-8 5-8 2 0 3 1 4 3 1-2 2-3 4-3 4 0 7 4 5 8-3 6-9 10-9 10z"/></svg>
+            </div>
+            <h4>Acolhimento real</h4>
+            <p>Tempo de consulta dedicado, sem pressa, com explicações claras sobre cada conduta.</p>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h4>Sem promessas vazias</h4>
+            <p>Comunicação ética: você sabe o que esperar, o que o procedimento faz e o que não faz.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Dra. Roberta Sayuri - Todos os direitos reservados.</p>
-    </footer>
+    <!-- ATENDIMENTOS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Atendimentos</span>
+          <h2>Áreas de atuação</h2>
+          <p>Atendimento clínico e procedimentos para pele, cabelos e unhas — sempre com avaliação prévia.</p>
+        </div>
 
+        <div class="services-grid">
+          <a class="service-card reveal" href="/atendimentos/cuidados-com-a-pele/">
+            <span class="service-card__number">— 01</span>
+            <h3>Cuidados com a pele</h3>
+            <p>Avaliação de acne, manchas, melasma, rosácea, alergias, lesões e cuidados gerais para todos os tipos de pele.</p>
+            <span class="service-card__arrow">Saiba mais →</span>
+          </a>
+
+          <a class="service-card reveal" href="/atendimentos/cuidados-com-os-cabelos/">
+            <span class="service-card__number">— 02</span>
+            <h3>Cuidados com os cabelos</h3>
+            <p>Avaliação de queda capilar, alterações do couro cabeludo, caspa e orientações para cada fase da vida.</p>
+            <span class="service-card__arrow">Saiba mais →</span>
+          </a>
+
+          <a class="service-card reveal" href="/atendimentos/cuidados-com-as-unhas/">
+            <span class="service-card__number">— 03</span>
+            <h3>Cuidados com as unhas</h3>
+            <p>Avaliação de alterações nas unhas, micoses, unhas frágeis e demais queixas frequentes.</p>
+            <span class="service-card__arrow">Saiba mais →</span>
+          </a>
+
+          <a class="service-card reveal" href="/atendimentos/procedimentos-esteticos/">
+            <span class="service-card__number">— 04</span>
+            <h3>Procedimentos estéticos</h3>
+            <p>Toxina botulínica, preenchedores, peelings químicos, bioestimuladores e tecnologias para a pele.</p>
+            <span class="service-card__arrow">Saiba mais →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-split__visual reveal" aria-hidden="true">
+            <div class="about-split__visual-placeholder">
+              <img src="/assets/img/placeholder-portrait.svg" alt="">
+            </div>
+          </div>
+
+          <div class="reveal">
+            <span class="eyebrow">Sobre a médica</span>
+            <h2>Dra. Roberta Sayuri</h2>
+            <p>Médica formada com dedicação aos cuidados da pele, cabelos e unhas, atendendo em Guaianases e região. Acredita que cuidar da pele é cuidar da saúde — e que cada paciente merece tempo, escuta e um plano de cuidado feito sob medida.</p>
+
+            <div class="about-credentials">
+              <div class="about-credentials__item">
+                <span class="about-credentials__label">Registro</span>
+                <span class="about-credentials__value">Médica — CRM-SP nº 213495</span>
+              </div>
+              <div class="about-credentials__item">
+                <span class="about-credentials__label">Formação</span>
+                <span class="about-credentials__value">Graduação em Medicina, com formação complementar em dermatologia clínica e cosmética.</span>
+              </div>
+              <div class="about-credentials__item">
+                <span class="about-credentials__label">Atendimento</span>
+                <span class="about-credentials__value">Consultório em Vila Santa Cruz, Guaianases — Zona Leste de São Paulo.</span>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-md);">
+              <a class="btn btn--primary" href="/sobre/">Conhecer a trajetória</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-block reveal">
+          <div class="cta-block__inner">
+            <span class="eyebrow" style="color: var(--color-rose);">Pronto para começar</span>
+            <h2>Agende sua consulta</h2>
+            <p>Todo o atendimento é feito pelo WhatsApp — respondemos em até 15 minutos em horário comercial.</p>
+            <a class="btn btn--light" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-source="cta-home">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
+              Falar pelo WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2>O que dúvidas comuns trazem</h2>
+        </div>
+
+        <div class="faq reveal">
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" data-faq-question aria-expanded="false">
+              Como faço para agendar uma consulta?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Todo o agendamento é feito pelo WhatsApp <a href="https://wa.me/5511982819473">(11) 98281-9473</a>. Você manda uma mensagem, a recepção responde com os horários disponíveis e confirma sua consulta.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" data-faq-question aria-expanded="false">
+              O que devo levar no dia da consulta?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Um documento com foto, exames anteriores relacionados à sua queixa (se houver) e a lista dos produtos que usa atualmente na pele ou cabelo. Também ajuda anotar dúvidas antes de chegar — toda pergunta tem espaço na consulta.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" data-faq-question aria-expanded="false">
+              O consultório atende convênios?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Para informações atualizadas sobre convênios e formas de pagamento, fale com a recepção pelo WhatsApp — temos todas as opções vigentes para te orientar.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" data-faq-question aria-expanded="false">
+              Qual a diferença entre consulta clínica e procedimento estético?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                A consulta clínica é a avaliação médica da sua queixa (acne, manchas, queda de cabelo, alergias etc.), com exame e plano de cuidado. Procedimentos estéticos (como peelings, toxina botulínica ou preenchedores) só são realizados após avaliação adequada e quando há indicação para o seu caso.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" data-faq-question aria-expanded="false">
+              Quanto tempo dura cada consulta?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Em média 30 a 45 minutos. A primeira consulta costuma ser um pouco mais longa porque envolve histórico clínico completo, exame e plano de cuidado.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/img/logo-rs-light.svg" alt="" class="footer-brand__mark" width="64" height="64">
+          <div class="footer-brand__name">Roberta Sayuri</div>
+          <div class="footer-brand__tag">Médica · CRM-SP 213495</div>
+          <p class="footer-brand__desc">Consultório médico em Guaianases, dedicado à saúde e estética da pele, cabelos e unhas, com responsabilidade e ética.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre/">Sobre</a></li>
+            <li><a href="/atendimentos/">Atendimentos</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contato/">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Atendimentos</h5>
+          <ul>
+            <li><a href="/atendimentos/cuidados-com-a-pele/">Cuidados com a pele</a></li>
+            <li><a href="/atendimentos/cuidados-com-os-cabelos/">Cuidados com os cabelos</a></li>
+            <li><a href="/atendimentos/cuidados-com-as-unhas/">Cuidados com as unhas</a></li>
+            <li><a href="/atendimentos/procedimentos-esteticos/">Procedimentos estéticos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contato</h5>
+          <ul>
+            <li><a href="https://wa.me/5511982819473">WhatsApp (11) 98281-9473</a></li>
+            <li>Rua Saturnino Pereira, 317</li>
+            <li>Vila Santa Cruz · Guaianases</li>
+            <li>São Paulo/SP · 08411-000</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Dra. Roberta Sayuri — Médica · CRM-SP nº 213495. Todos os direitos reservados.</span>
+        <div class="footer-bottom__legal">
+          <a href="/politica-de-privacidade/">Política de Privacidade</a>
+          <a href="/termos-de-uso/">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp" data-source="floating">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
+  </a>
+
+  <!-- Cookie banner (LGPD) -->
+  <div class="cookie-banner" data-cookie-banner role="dialog" aria-labelledby="cookie-title">
+    <p class="cookie-banner__text" id="cookie-title">
+      Usamos cookies essenciais para o funcionamento do site e cookies analíticos para entender como ele é usado. Você pode aceitar ou recusar. Veja a <a href="/politica-de-privacidade/">Política de Privacidade</a>.
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--primary" data-cookie-accept>Aceitar</button>
+      <button class="btn btn--ghost" data-cookie-decline>Apenas essenciais</button>
+    </div>
+  </div>
+
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
