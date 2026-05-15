@@ -1218,6 +1218,11 @@ p:last-child { margin-bottom: 0; }
 
 .prose strong { color: var(--color-sage-dark); font-weight: 600; }
 
+/* Disclaimer obrigatório CFM 2.336/2023 - "NÃO ESPECIALISTA" deve aparecer em caixa alta */
+strong:where(.about-credentials__value strong, .prose p strong) {
+  letter-spacing: 0.02em;
+}
+
 .prose a {
   text-decoration: underline;
   text-underline-offset: 3px;
