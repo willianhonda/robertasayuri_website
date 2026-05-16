@@ -250,7 +250,7 @@ p:last-child { margin-bottom: 0; }
 
 .nav__brand-name-img {
   display: block;
-  height: 35px;
+  height: 30px;
   width: auto;
   margin-bottom: 3px;
 }
@@ -558,6 +558,16 @@ p:last-child { margin-bottom: 0; }
   opacity: 0.35;
 }
 
+/* Foto real preenchendo todo o hero */
+.hero__visual-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .hero__visual-badge {
   position: absolute;
   bottom: var(--space-md);
@@ -778,6 +788,15 @@ p:last-child { margin-bottom: 0; }
 }
 
 .about-split__visual-placeholder svg { width: 50%; opacity: 0.35; }
+
+.about-split__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
 
 .about-credentials {
   margin-top: var(--space-md);
@@ -1380,6 +1399,112 @@ strong:where(.about-credentials__value strong, .prose p strong) {
   display: flex;
   gap: var(--space-2xs);
   align-items: center;
+}
+
+/* =========================================================
+   Gallery (fotos do consultório)
+   ========================================================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.gallery__item {
+  position: relative;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-line);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--t-base);
+}
+
+.gallery__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery__item picture,
+.gallery__item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.gallery__item--portrait picture,
+.gallery__item--portrait img {
+  aspect-ratio: 4 / 5;
+}
+
+.gallery__item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md) var(--space-sm) var(--space-sm);
+  background: linear-gradient(to top, rgba(89, 98, 84, 0.92), rgba(89, 98, 84, 0));
+  color: var(--color-cream);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Foto wide (ex: fachada) */
+.facade-photo {
+  margin: var(--space-xl) 0 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--color-line);
+  position: relative;
+}
+
+.facade-photo picture,
+.facade-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.facade-photo figcaption {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-cream);
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  text-align: center;
+  border-top: 1px solid var(--color-line);
+}
+
+/* Featured photo (destaque em página de atendimento) */
+.featured-photo {
+  margin: 0 auto;
+  max-width: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--color-line);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.featured-photo picture,
+.featured-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.featured-photo figcaption {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-cream);
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  text-align: center;
+  border-top: 1px solid var(--color-line);
+  font-style: italic;
 }
 
 /* =========================================================
