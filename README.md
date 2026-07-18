@@ -1,5 +1,7 @@
 # Site Dra. Roberta Sayuri — Manual de Deploy
 
+> **Atualização 16/07/2026:** site agora cobre as **duas unidades** — Guaianases/SP (sábados, WhatsApp 11 98281-9473) e São José dos Campos (New Worker Tower, Jardim Aquarius — seg a sex, WhatsApp 12 99237-1046). CTAs genéricos de agendamento apontam para **linktr.ee/dra.roberta.sayuri** (o lead escolhe a unidade); botões dentro de contexto de unidade apontam direto para o WhatsApp daquela unidade.
+
 Site institucional para **robertasayuri.com.br**, em HTML/CSS/JS puro, pronto para GitHub Pages.
 
 ---
