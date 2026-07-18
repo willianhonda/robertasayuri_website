@@ -1570,3 +1570,83 @@ strong:where(.about-credentials__value strong, .prose p strong) {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* =========================================================
+   Unidades (Guaianases · São José dos Campos)
+   ========================================================= */
+.units-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.unit-card {
+  background: var(--color-cream-warm);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--t-base), transform var(--t-base);
+}
+
+.unit-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.unit-card__badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bordeaux);
+  background: var(--color-rose);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+
+.unit-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.unit-card__info {
+  list-style: none;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.unit-card__info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  margin-bottom: var(--space-xs);
+}
+
+.unit-card__info li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--color-bordeaux);
+}
+
+.unit-card .btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 820px) {
+  .units-grid { grid-template-columns: 1fr; }
+}
+
+/* Rodapé — espaçamento entre unidades */
+.footer-col__spacer { margin-top: var(--space-xs); }
+.site-footer .footer-col strong { color: var(--color-cream); font-weight: 600; }

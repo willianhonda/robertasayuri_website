@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#FFFDFA">
 
-  <title>Dra. Roberta Sayuri — Pele e Estética em Guaianases/SP</title>
-  <meta name="description" content="Dra. Roberta Sayuri — médica formada pela Universidade de Vassouras (CRM-SP 213495), com atuação em cuidados com a pele, cabelos e unhas. Consultório em Guaianases, Zona Leste de SP. Agende pelo WhatsApp.">
+  <title>Dra. Roberta Sayuri — Médica | Guaianases e São José dos Campos</title>
+  <meta name="description" content="Dra. Roberta Sayuri — médica (CRM-SP 213495) com atuação em cuidados com a pele, cabelos e unhas. Consultas em Guaianases (sábados) e São José dos Campos (durante a semana). Agende pelo WhatsApp.">
 
   <link rel="canonical" href="https://www.robertasayuri.com.br/">
 
@@ -14,15 +14,15 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Dra. Roberta Sayuri">
-  <meta property="og:title" content="Dra. Roberta Sayuri — Pele e Estética em Guaianases">
-  <meta property="og:description" content="Médica formada pela Universidade de Vassouras (CRM-SP 213495), com atuação em cuidados com a pele, cabelos e unhas. Atende em Guaianases, Zona Leste de SP.">
+  <meta property="og:title" content="Dra. Roberta Sayuri — Médica | Guaianases e São José dos Campos">
+  <meta property="og:description" content="Médica formada pela Universidade de Vassouras (CRM-SP 213495), com atuação em cuidados com a pele, cabelos e unhas. Atende em Guaianases (SP) e São José dos Campos.">
   <meta property="og:url" content="https://www.robertasayuri.com.br/">
   <meta property="og:image" content="https://www.robertasayuri.com.br/assets/img/og-cover.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dra. Roberta Sayuri — Pele e Estética em Guaianases">
-  <meta name="twitter:description" content="Médica formada pela Universidade de Vassouras (CRM-SP 213495), com atuação em cuidados com a pele, cabelos e unhas. Guaianases, SP.">
+  <meta name="twitter:title" content="Dra. Roberta Sayuri — Médica | Guaianases e São José dos Campos">
+  <meta name="twitter:description" content="Médica formada pela Universidade de Vassouras (CRM-SP 213495), com atuação em cuidados com a pele, cabelos e unhas. Guaianases e São José dos Campos, SP.">
 
   <!-- Icons (favicon na raiz + tamanhos preferidos pelo Google) -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -44,63 +44,89 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "@id": "https://www.robertasayuri.com.br/#consultorio",
-    "name": "Consultório Dra. Roberta Sayuri",
-    "image": "https://www.robertasayuri.com.br/assets/img/og-cover.png",
-    "url": "https://www.robertasayuri.com.br/",
-    "telephone": "+55-11-98281-9473",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua Saturnino Pereira, 317",
-      "addressLocality": "Guaianases",
-      "addressRegion": "SP",
-      "postalCode": "08411-000",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -23.5410,
-      "longitude": -46.4218
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "08:00",
-        "closes": "17:00"
-      }
-    ],
-    "areaServed": [
-      {"@type": "City", "name": "São Paulo"},
-      {"@type": "Place", "name": "Guaianases"},
-      {"@type": "Place", "name": "Vila Santa Cruz"},
-      {"@type": "Place", "name": "Itaim Paulista"},
-      {"@type": "Place", "name": "Lajeado"},
-      {"@type": "Place", "name": "José Bonifácio"},
-      {"@type": "Place", "name": "Cidade Tiradentes"}
-    ],
-    "physician": {
-      "@type": "Physician",
-      "@id": "https://www.robertasayuri.com.br/sobre/#medica",
-      "name": "Dra. Roberta Sayuri",
-      "identifier": "CRM-SP 213495",
-      "gender": "Female",
-      "medicalSpecialty": "GeneralPractice",
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Universidade de Vassouras"
+        "@type": "MedicalBusiness",
+        "@id": "https://www.robertasayuri.com.br/#consultorio-guaianases",
+        "name": "Consultório Dra. Roberta Sayuri — Guaianases",
+        "image": "https://www.robertasayuri.com.br/assets/img/og-cover.png",
+        "url": "https://www.robertasayuri.com.br/",
+        "telephone": "+55-11-98281-9473",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Saturnino Pereira, 317",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "08411-000",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -23.5410,
+          "longitude": -46.4218
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
+        "areaServed": [
+          {"@type": "City", "name": "São Paulo"},
+          {"@type": "Place", "name": "Guaianases"},
+          {"@type": "Place", "name": "Vila Santa Cruz"},
+          {"@type": "Place", "name": "Itaim Paulista"},
+          {"@type": "Place", "name": "Lajeado"},
+          {"@type": "Place", "name": "José Bonifácio"},
+          {"@type": "Place", "name": "Cidade Tiradentes"}
+        ],
+        "physician": {"@id": "https://www.robertasayuri.com.br/sobre/#medica"}
       },
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "degree",
-          "name": "Graduação em Medicina",
-          "recognizedBy": {"@type": "CollegeOrUniversity", "name": "Universidade de Vassouras"}
-        }
-      ]
-    }
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://www.robertasayuri.com.br/#consultorio-sjc",
+        "name": "Consultório Dra. Roberta Sayuri — São José dos Campos",
+        "image": "https://www.robertasayuri.com.br/assets/img/og-cover.png",
+        "url": "https://www.robertasayuri.com.br/contato/",
+        "telephone": "+55-12-99237-1046",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Armando de Oliveira Cobra, 50 — Edifício New Worker Tower",
+          "addressLocality": "São José dos Campos",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "São José dos Campos"},
+          {"@type": "Place", "name": "Jardim Aquarius"}
+        ],
+        "physician": {"@id": "https://www.robertasayuri.com.br/sobre/#medica"}
+      },
+      {
+        "@type": "Physician",
+        "@id": "https://www.robertasayuri.com.br/sobre/#medica",
+        "name": "Dra. Roberta Sayuri",
+        "identifier": "CRM-SP 213495",
+        "gender": "Female",
+        "medicalSpecialty": "GeneralPractice",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidade de Vassouras"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "Graduação em Medicina",
+            "recognizedBy": {"@type": "CollegeOrUniversity", "name": "Universidade de Vassouras"}
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -127,7 +153,7 @@
           <li><a class="nav__link" href="/blog/">Blog</a></li>
           <li><a class="nav__link" href="/contato/">Contato</a></li>
           <li>
-            <a class="nav__cta" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-source="header">
+            <a class="nav__cta" href="https://linktr.ee/dra.roberta.sayuri" target="_blank" rel="noopener" data-source="header">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
               Agendar
             </a>
@@ -150,7 +176,7 @@
           <div class="hero__content reveal">
             <div class="hero__eyebrow">
               <span class="hero__eyebrow-line"></span>
-              <span class="eyebrow" style="margin: 0;">Consultório em Guaianases</span>
+              <span class="eyebrow" style="margin: 0;">Guaianases · São José dos Campos</span>
             </div>
             <h1 class="hero__title">
               Cuidar da pele<br>
@@ -162,7 +188,7 @@
             </p>
 
             <div class="hero__actions">
-              <a class="btn btn--primary" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-source="hero">
+              <a class="btn btn--primary" href="https://linktr.ee/dra.roberta.sayuri" target="_blank" rel="noopener" data-source="hero">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
                 Agendar pelo WhatsApp
               </a>
@@ -172,11 +198,11 @@
             <div class="hero__meta">
               <span class="hero__meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                Vila Santa Cruz · Guaianases
+                Guaianases · Sábados, 8h–17h
               </span>
               <span class="hero__meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                Atendimento aos Sábados · 8h–17h
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                São José dos Campos · Seg a sex
               </span>
               <span class="hero__meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 6 9-6M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l2-2h14l2 2"/></svg>
@@ -218,7 +244,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
             </div>
             <h4>Pertinho de você</h4>
-            <p>No coração de Guaianases, fácil acesso pela Av. Nordestina e estação CPTM.</p>
+            <p>Duas unidades: Guaianases (Vila Santa Cruz), em São Paulo, e Jardim Aquarius, em São José dos Campos.</p>
           </article>
 
           <article class="pillar reveal">
@@ -329,6 +355,57 @@
       </div>
     </section>
 
+    <!-- UNIDADES -->
+    <section class="section" id="unidades">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Onde atendemos</span>
+          <h2>Duas unidades para o seu cuidado</h2>
+          <p>Escolha o endereço mais perto de você. Cada unidade tem seu próprio WhatsApp de agendamento.</p>
+        </div>
+
+        <div class="units-grid">
+          <article class="unit-card reveal">
+            <span class="unit-card__badge">São Paulo · Zona Leste</span>
+            <h3>Guaianases</h3>
+            <ul class="unit-card__info">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                <span>Rua Saturnino Pereira, 317<br>Vila Santa Cruz · Guaianases, São Paulo/SP</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                <span>Consultas aos sábados · 8h às 17h</span>
+              </li>
+            </ul>
+            <a class="btn btn--primary" href="https://wa.me/5511982819473?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20em%20Guaianases." target="_blank" rel="noopener" data-source="unidade-guaianases">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
+              Agendar em Guaianases
+            </a>
+          </article>
+
+          <article class="unit-card reveal">
+            <span class="unit-card__badge">Vale do Paraíba</span>
+            <h3>São José dos Campos</h3>
+            <ul class="unit-card__info">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                <span>Edifício New Worker Tower<br>Rua Armando de Oliveira Cobra, 50 · Jardim Aquarius, São José dos Campos/SP</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                <span>Consultas durante a semana · com hora marcada</span>
+              </li>
+            </ul>
+            <a class="btn btn--primary" href="https://wa.me/5512992371046?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20em%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos." target="_blank" rel="noopener" data-source="unidade-sjc">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
+              Agendar em SJC
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="section">
       <div class="container">
@@ -337,7 +414,7 @@
             <span class="eyebrow" style="color: var(--color-rose);">Pronto para começar</span>
             <h2>Agende sua consulta</h2>
             <p>Todo o atendimento é feito pelo WhatsApp — respondemos em até 15 minutos, de segunda a sábado, das 8h às 18h.</p>
-            <a class="btn btn--light" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-source="cta-home">
+            <a class="btn btn--light" href="https://linktr.ee/dra.roberta.sayuri" target="_blank" rel="noopener" data-source="cta-home">
               <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
               Falar pelo WhatsApp
             </a>
@@ -351,10 +428,22 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">Perguntas frequentes</span>
-          <h2>O que dúvidas comuns trazem</h2>
+          <h2>Antes da sua primeira consulta</h2>
         </div>
 
         <div class="faq reveal">
+          <div class="faq__item" data-faq-item>
+            <button class="faq__question" data-faq-question aria-expanded="false">
+              Onde acontecem os atendimentos?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                Em duas unidades: em Guaianases (Rua Saturnino Pereira, 317 — Vila Santa Cruz, São Paulo/SP), aos sábados, e em São José dos Campos (Edifício New Worker Tower — Rua Armando de Oliveira Cobra, 50, Jardim Aquarius), durante a semana, sempre com hora marcada.
+              </div>
+            </div>
+          </div>
+
           <div class="faq__item" data-faq-item>
             <button class="faq__question" data-faq-question aria-expanded="false">
               Como faço para agendar uma consulta?
@@ -362,7 +451,7 @@
             </button>
             <div class="faq__answer">
               <div class="faq__answer-inner">
-                Todo o agendamento é feito pelo WhatsApp <a href="https://wa.me/5511982819473">(11) 98281-9473</a>. Você manda uma mensagem, a recepção responde com os horários disponíveis e confirma sua consulta.
+                Todo o agendamento é feito pelo WhatsApp da unidade escolhida: <a href="https://wa.me/5511982819473">(11) 98281-9473</a> para Guaianases ou <a href="https://wa.me/5512992371046">(12) 99237-1046</a> para São José dos Campos. Você manda uma mensagem, a recepção responde com os horários disponíveis e confirma sua consulta. Se preferir, todos os canais estão reunidos em <a href="https://linktr.ee/dra.roberta.sayuri" target="_blank" rel="noopener">linktr.ee/dra.roberta.sayuri</a>.
               </div>
             </div>
           </div>
@@ -386,7 +475,7 @@
             </button>
             <div class="faq__answer">
               <div class="faq__answer-inner">
-                Para informações atualizadas sobre convênios e formas de pagamento, fale com a recepção pelo WhatsApp — temos todas as opções vigentes para te orientar.
+                O atendimento é particular. Emitimos nota fiscal e fornecemos a documentação para você solicitar reembolso junto ao seu convênio, quando o seu plano oferecer essa opção — os valores e regras de reembolso variam conforme cada convênio.
               </div>
             </div>
           </div>
@@ -427,7 +516,7 @@
           <img src="/assets/img/logotype-light.png" alt="" class="footer-brand__mark" width="64" height="64">
           <img src="/assets/img/roberta-sayuri-light.png" alt="Roberta Sayuri" class="footer-brand__name-img">
           <div class="footer-brand__tag">Médica · CRM-SP 213495</div>
-          <p class="footer-brand__desc">Consultório médico em Guaianases, dedicado à saúde e estética da pele, cabelos e unhas, com responsabilidade e ética.</p>
+          <p class="footer-brand__desc">Atendimento médico em Guaianases e São José dos Campos, dedicado à saúde e estética da pele, cabelos e unhas, com responsabilidade e ética.</p>
         </div>
 
         <div class="footer-col">
@@ -454,10 +543,11 @@
         <div class="footer-col">
           <h5>Contato</h5>
           <ul>
+            <li><strong>Guaianases — SP</strong> · Sábados, 8h–17h</li>
             <li><a href="https://wa.me/5511982819473">WhatsApp (11) 98281-9473</a></li>
-            <li>Rua Saturnino Pereira, 317</li>
-            <li>Vila Santa Cruz · Guaianases</li>
-            <li>São Paulo/SP · 08411-000</li>
+            <li class="footer-col__spacer"><strong>São José dos Campos — SP</strong> · Seg a sex</li>
+            <li><a href="https://wa.me/5512992371046">WhatsApp (12) 99237-1046</a></li>
+            <li class="footer-col__spacer"><a href="https://linktr.ee/dra.roberta.sayuri" target="_blank" rel="noopener">Agendamento · linktr.ee/dra.roberta.sayuri</a></li>
           </ul>
         </div>
       </div>
@@ -473,7 +563,7 @@
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a class="whatsapp-float" href="https://wa.me/5511982819473?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp" data-source="floating">
+  <a class="whatsapp-float" href="https://linktr.ee/dra.roberta.sayuri" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp — escolha a unidade" data-source="floating">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6 0-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5-.1-.2-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.4 2 13.7 2 12c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1 0 5.5-4.5 9.7-10 9.7z"/></svg>
   </a>
 
