@@ -1,6 +1,6 @@
 # Site Dra. Roberta Sayuri — Manual de Deploy
 
-> **Atualização 16/07/2026:** site agora cobre as **duas unidades** — Guaianases/SP (sábados, WhatsApp 11 98281-9473) e São José dos Campos (New Worker Tower, Jardim Aquarius — seg a sex, WhatsApp 12 99237-1046). CTAs genéricos de agendamento apontam para **linktr.ee/dra.roberta.sayuri** (o lead escolhe a unidade); botões dentro de contexto de unidade apontam direto para o WhatsApp daquela unidade.
+> **Atualização 19/09/2026:** endereço de São José dos Campos corrigido para **Espaço Vitalle, Av. Saga, 108, Jardim Oriente, CEP 12241-200** (o antigo New Worker Tower / Jardim Aquarius saiu do site inteiro). O Linktree saiu de todos os CTAs: agora o botão "Agendar" leva à seção `#agendar`, que tem um botão por unidade apontando direto para o WhatsApp correspondente. Seis páginas novas entraram: `/sjc/`, `/consulta-particular/`, `/queda-de-cabelo-sjc/`, `/acne-sjc/`, `/melasma-manchas-sjc/`, `/estetica-sjc/`.
 
 Site institucional para **robertasayuri.com.br**, em HTML/CSS/JS puro, pronto para GitHub Pages.
 
@@ -240,3 +240,58 @@ Em caso de dúvidas sobre atualização de conteúdo, basta editar os arquivos `
 ---
 
 **Versão:** 1.0 · Maio de 2026
+
+
+---
+
+## 🔄 Changelog 19/09/2026
+
+### Endereço e dados
+- SJC: Espaço Vitalle, Av. Saga, 108, Jardim Oriente, São José dos Campos/SP, CEP 12241-200 (home, /contato/, /sobre/, rodapé de todas as páginas, FAQ, JSON-LD, mapa incorporado, política de privacidade).
+- Zero ocorrências de "New Worker", "Armando", "Cobra", "Aquarius", "linktr.ee", "nota fiscal", "15 minutos", "dermatolog", "especialista" nas páginas públicas.
+- "Nota fiscal" virou "recibo" (atendimento como pessoa física).
+- O caractere travessão foi removido de toda a copy.
+
+### Agendamento
+- Cabeçalho, botão flutuante e CTAs apontam para `#agendar` (ou `/contato/#agendar` nas páginas sem bloco próprio).
+- Cada bloco de agendamento tem dois botões, um por unidade, com texto pré-preenchido no WhatsApp.
+- Todo link de WhatsApp tem `class="wa-cta"` e `data-unidade="guaianases|sjc"`.
+
+### Rastreamento
+- Script antes de `</body>` em todas as páginas: acrescenta `[origem / campanha]` ao texto do WhatsApp e dispara o evento `clique_whatsapp` no GA4.
+- `<body data-pagina="...">` em todas as páginas.
+- **Pendente:** instalar o GA4 (o script só dispara se `gtag` existir) e marcar `clique_whatsapp` como conversão.
+
+### Conteúdo
+- /atendimentos/procedimentos-esteticos/: lista completa dos procedimentos, sem preço, com "após avaliação médica".
+- Páginas de pele, cabelos e unhas: bloco "O que está incluso na consulta" (dermatoscopia e tricoscopia sem cobrança à parte) e links internos para as páginas de SJC.
+- Home: FAQ com "O que está incluso na consulta" e "Qual é o valor da consulta", além de schema FAQPage.
+- JSON-LD da home reescrito com as duas unidades, sem `medicalSpecialty`.
+
+### Pendências marcadas no código
+- **Horário de SJC:** as páginas dizem "durante a semana, com hora marcada". Assim que o horário real estiver confirmado (o perfil no Google mostra quinta-feira, 13h às 18h), trocar o texto e preencher `openingHoursSpecification` da unidade de SJC no JSON-LD da home. Buscar por `CONFIRMAR`.
+- **Preço da consulta (versão B):** o bloco "Valor" das páginas novas traz um comentário HTML com o texto "R$ 289 no Pix ou R$ 299 no cartão". Publicar só com aprovação da Dra., trocando o parágrafo da versão A.
+- **Fotos do Espaço Vitalle:** 8 a 12 fotos (fachada com o número 108, entrada, recepção, sala de consulta, equipamentos), sem pacientes, para /sjc/ e /contato/.
+- **Estacionamento e como chegar em SJC:** ainda não descrito no site.
+
+---
+
+## 📸 Trocar a foto principal da Dra.
+
+A foto aparece em três lugares (hero da home, bloco "Sobre a médica" e página /sobre/) e sempre pelos mesmos quatro arquivos. Para trocar:
+
+```bash
+pip3 install pillow
+python3 scripts/atualizar-foto-dra.py ~/Downloads/nova-foto.jpg
+```
+
+Isso regenera, com recorte central 4:5:
+
+```
+assets/img/photos/dra-roberta-retrato-md.jpg    480 x 600
+assets/img/photos/dra-roberta-retrato-md.webp   480 x 600
+assets/img/photos/dra-roberta-retrato-lg.jpg    800 x 1000
+assets/img/photos/dra-roberta-retrato-lg.webp   800 x 1000
+```
+
+Se o enquadramento sair ruim, use `--foco cima` ou `--foco baixo`. Nenhum HTML precisa ser alterado.
