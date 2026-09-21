@@ -1,6 +1,6 @@
 # Site Dra. Roberta Sayuri — Manual de Deploy
 
-> **Atualização 16/07/2026:** site agora cobre as **duas unidades** — Guaianases/SP (sábados, WhatsApp 11 98281-9473) e São José dos Campos (New Worker Tower, Jardim Aquarius — seg a sex, WhatsApp 12 99237-1046). CTAs genéricos de agendamento apontam para **linktr.ee/dra.roberta.sayuri** (o lead escolhe a unidade); botões dentro de contexto de unidade apontam direto para o WhatsApp daquela unidade.
+> **Atualização 19/09/2026:** endereço de São José dos Campos corrigido para **Espaço Vitalle, Av. Saga, 108, Jardim Oriente, CEP 12241-200** (o antigo New Worker Tower / Jardim Aquarius saiu do site inteiro). O Linktree saiu de todos os CTAs: agora o botão "Agendar" leva à seção `#agendar`, que tem um botão por unidade apontando direto para o WhatsApp correspondente. Seis páginas novas entraram: `/sjc/`, `/consulta-particular/`, `/queda-de-cabelo-sjc/`, `/acne-sjc/`, `/melasma-manchas-sjc/`, `/estetica-sjc/`.
 
 Site institucional para **robertasayuri.com.br**, em HTML/CSS/JS puro, pronto para GitHub Pages.
 
@@ -240,3 +240,141 @@ Em caso de dúvidas sobre atualização de conteúdo, basta editar os arquivos `
 ---
 
 **Versão:** 1.0 · Maio de 2026
+
+
+---
+
+## 🔄 Changelog 19/09/2026
+
+### Endereço e dados
+- SJC: Espaço Vitalle, Av. Saga, 108, Jardim Oriente, São José dos Campos/SP, CEP 12241-200 (home, /contato/, /sobre/, rodapé de todas as páginas, FAQ, JSON-LD, mapa incorporado, política de privacidade).
+- Zero ocorrências de "New Worker", "Armando", "Cobra", "Aquarius", "linktr.ee", "nota fiscal", "15 minutos", "dermatolog", "especialista" nas páginas públicas.
+- "Nota fiscal" virou "recibo" (atendimento como pessoa física).
+- O caractere travessão foi removido de toda a copy.
+
+### Agendamento
+- Cabeçalho, botão flutuante e CTAs apontam para `#agendar` (ou `/contato/#agendar` nas páginas sem bloco próprio).
+- Cada bloco de agendamento tem dois botões, um por unidade, com texto pré-preenchido no WhatsApp.
+- Todo link de WhatsApp tem `class="wa-cta"` e `data-unidade="guaianases|sjc"`.
+
+### Rastreamento
+- Script antes de `</body>` em todas as páginas: acrescenta `[origem / campanha]` ao texto do WhatsApp e dispara o evento `clique_whatsapp` no GA4.
+- `<body data-pagina="...">` em todas as páginas.
+- **Pendente:** instalar o GA4 (o script só dispara se `gtag` existir) e marcar `clique_whatsapp` como conversão.
+
+### Conteúdo
+- /atendimentos/procedimentos-esteticos/: lista completa dos procedimentos, sem preço, com "após avaliação médica".
+- Páginas de pele, cabelos e unhas: bloco "O que está incluso na consulta" (dermatoscopia e tricoscopia sem cobrança à parte) e links internos para as páginas de SJC.
+- Home: FAQ com "O que está incluso na consulta" e "Qual é o valor da consulta", além de schema FAQPage.
+- JSON-LD da home reescrito com as duas unidades, sem `medicalSpecialty`.
+
+### Pendências marcadas no código
+- **Horário de SJC:** as páginas dizem "durante a semana, com hora marcada". Assim que o horário real estiver confirmado (o perfil no Google mostra quinta-feira, 13h às 18h), trocar o texto e preencher `openingHoursSpecification` da unidade de SJC no JSON-LD da home. Buscar por `CONFIRMAR`.
+- **Preço da consulta (versão B):** o bloco "Valor" das páginas novas traz um comentário HTML com o texto "R$ 289 no Pix ou R$ 299 no cartão". Publicar só com aprovação da Dra., trocando o parágrafo da versão A.
+- **Fotos do Espaço Vitalle:** 8 a 12 fotos (fachada com o número 108, entrada, recepção, sala de consulta, equipamentos), sem pacientes, para /sjc/ e /contato/.
+- **Estacionamento e como chegar em SJC:** ainda não descrito no site.
+
+---
+
+## 📸 Trocar a foto principal da Dra.
+
+A foto aparece em três lugares (hero da home, bloco "Sobre a médica" e página /sobre/) e sempre pelos mesmos quatro arquivos. Para trocar:
+
+```bash
+pip3 install pillow
+python3 scripts/atualizar-foto-dra.py ~/Downloads/nova-foto.jpg
+```
+
+Isso regenera, com recorte central 4:5:
+
+```
+assets/img/photos/dra-roberta-retrato-md.jpg    480 x 600
+assets/img/photos/dra-roberta-retrato-md.webp   480 x 600
+assets/img/photos/dra-roberta-retrato-lg.jpg    800 x 1000
+assets/img/photos/dra-roberta-retrato-lg.webp   800 x 1000
+```
+
+Se o enquadramento sair ruim, use `--foco cima` ou `--foco baixo`. Nenhum HTML precisa ser alterado.
+
+---
+
+## 🖼️ Mapa das fotos da Dra. (atualizado 19/09/2026)
+
+Existem três fotos originais dela no repositório: o retrato de jaleco, a foto de procedimento em close ("foco") e a de preparo de material ("preparo"). A partir delas foram gerados recortes em outros formatos, para que nenhuma página repita a mesma imagem:
+
+| Arquivo | Origem | Formato | Onde aparece |
+|---|---|---|---|
+| `dra-roberta-retrato-*` | original | 4:5 | Hero da home, topo de /sobre/ |
+| `dra-roberta-busto-*` | recorte do retrato | 1:1 | Galeria de /sobre/, /atendimentos/cuidados-com-a-pele/, /sjc/ |
+| `dra-roberta-avatar-*` | recorte do retrato | 1:1 pequeno | Cartão da autora nos três posts do blog |
+| `dra-procedimentos-foco-*` | original | 4:5 | Bloco "Sobre a médica" na home |
+| `dra-procedimentos-foco-quadrado-*` | recorte do foco | 1:1 | /cuidados-com-os-cabelos/, /consulta-particular/, /queda-de-cabelo-sjc/, /estetica-sjc/ |
+| `dra-procedimentos-preparo-*` | original | 1:1 | /atendimentos/procedimentos-esteticos/, /cuidados-com-as-unhas/, /acne-sjc/ |
+| `dra-procedimentos-preparo-wide-*` | recorte do preparo | 16:9 | /atendimentos/, faixa em /sobre/, /melasma-manchas-sjc/ |
+
+Para regenerar os recortes depois de trocar uma foto original: `python3 scripts/atualizar-foto-dra.py` para o retrato e `build/gerar_variacoes.py` (no histórico da conversa) para os derivados.
+
+### Fotos que faltam para variedade real
+
+Com três originais, a repetição entre páginas é inevitável. Uma sessão curta resolve. Sugestão de pauta, sem paciente no enquadramento e sem receituário legível:
+
+1. Retrato em pé, corpo até a cintura, fundo do consultório desfocado (formato vertical, para hero).
+2. Retrato horizontal, com espaço lateral vazio para texto (para faixas e Open Graph).
+3. Dra. sentada à mesa, escrevendo ou conversando (transmite a consulta, não o procedimento).
+4. Dra. com o dermatoscópio na mão, close no equipamento.
+5. Dra. com o tricoscópio, olhando a tela do aparelho (serve às páginas de queda de cabelo).
+6. Mãos preparando material, close, sem rosto (bom para faixas e blocos pequenos).
+7. Dra. na recepção, recebendo alguém (de costas ou sem rosto do paciente).
+8. Uma versão de cada uma acima também na unidade de São José dos Campos, já que hoje todas as fotos são de Guaianases.
+
+Entregar em JPG, lado maior de pelo menos 2000 px, sem filtro pesado.
+
+---
+
+## 🧩 Imagem por procedimento
+
+Cada procedimento tem a sua própria imagem, em `assets/img/procedimentos/`. Hoje são ilustrações em SVG na paleta da clínica (creme, sálvia, rosé, bordô), geradas para segurar o lugar até existir foto real. Elas aparecem na grade de cartões de `/atendimentos/procedimentos-esteticos/` e `/estetica-sjc/`, com nome, descrição curta e o selo "Após avaliação médica".
+
+| Slug do arquivo | Procedimento | Foto real sugerida |
+|---|---|---|
+| `botox-terco-superior` | Toxina botulínica, terço superior | Seringa na mão enluvada, close, sem rosto de paciente |
+| `botox-terco-superior-medio` | Toxina botulínica, superior e médio | Bandeja montada com seringas e marcação |
+| `botox-bruxismo` | Toxina botulínica para bruxismo | Frasco e diluição em close |
+| `botox-hiperidrose-axilar` | Toxina botulínica para hiperidrose | Material preparado sobre campo estéril |
+| `bioestimulador` | Bioestimulador de colágeno | Frasco e seringa de reconstituição |
+| `profhilo` | Profhilo | Seringa na embalagem original, close |
+| `skinviv` | Skinviv | Seringa na embalagem original, close |
+| `peeling-superficial` | Peeling superficial | Frascos e gaze, com a Dra. de luva |
+| `peeling-medio` | Peeling médio | Mesa de apoio montada para peeling |
+| `microagulhamento-facial` | Microagulhamento facial | Caneta de microagulhamento na mão |
+| `microagulhamento-drug-delivery` | Microagulhamento com drug delivery | Caneta ao lado dos ativos |
+| `mmp-capilar-led` | MMP capilar com LED | Capacete de LED ligado, sem paciente |
+| `infiltracao-alopecia` | Infiltração para alopecia | Seringa fina e tricoscópio na bancada |
+| `infiltracao-queloide` | Infiltração para queloide | Material preparado, close |
+| `cauterizacao-quimica` | Cauterização química | Frasco e aplicador |
+| `eletrocauterizacao` | Eletrocauterização | Aparelho de eletrocautério ligado |
+| `exerese-lesao-benigna` | Exérese de lesão benigna | Instrumental cirúrgico sobre campo |
+| `curetagem-molusco` | Curetagem de molusco contagioso | Cureta e material descartável |
+| `biopsia-de-pele` | Biópsia de pele | Punch e frasco de formol identificado sem nome |
+| `avaliacao-dermatoscopia` | Avaliação com dermatoscopia (reserva) | Dermatoscópio na mão da Dra. |
+
+### Trocar uma ilustração por foto real
+
+```bash
+python3 scripts/foto-procedimento.py --listar
+python3 scripts/foto-procedimento.py botox-terco-superior ~/Downloads/foto-botox.jpg
+```
+
+O script recorta em 4:3, gera JPG e WebP em 800x600 e troca o `<img>` da ilustração por um `<picture>` nas duas páginas, mantendo o SVG no repositório. Dá para trocar uma de cada vez, conforme as fotos forem chegando: ilustração e foto convivem na mesma grade sem quebrar o layout.
+
+### Pauta de fotos da Dra. em procedimento e em pose na clínica
+
+Além das fotos por procedimento, faltam imagens dela em situação, que hoje se resumem a três. Sugestão de pauta, sem paciente identificável, sem receituário legível e sem antes e depois:
+
+**Em procedimento (para os cartões e para as páginas de estética):** preparando a bandeja; segurando a seringa em close; aplicando em manequim ou em modelo de treino; usando o dermatoscópio; usando o tricoscópio com a tela visível; ajustando o capacete de LED; higienizando as mãos e calçando luva.
+
+**Em pose na clínica (para hero, faixas e páginas institucionais):** de pé na recepção, corpo inteiro; sentada à mesa escrevendo; conversando em frente à maca, gesto de escuta; encostada na bancada, braços cruzados, sorrindo; andando pelo corredor; retrato horizontal com espaço lateral vazio para texto; retrato vertical de meio corpo com fundo desfocado.
+
+**Repetir o essencial na unidade de São José dos Campos**, já que todas as fotos atuais são de Guaianases: fachada com o número 108, recepção, sala de consulta e dois retratos dela no espaço.
+
+Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possível, sem filtro pesado.

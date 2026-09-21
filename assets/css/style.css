@@ -1650,3 +1650,167 @@ strong:where(.about-credentials__value strong, .prose p strong) {
 /* Rodapé — espaçamento entre unidades */
 .footer-col__spacer { margin-top: var(--space-xs); }
 .site-footer .footer-col strong { color: var(--color-cream); font-weight: 600; }
+
+/* =========================================================
+   Ações de agendamento (dois botões por unidade)
+   ========================================================= */
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.cta-actions .btn {
+  flex: 0 1 auto;
+}
+
+@media (max-width: 520px) {
+  .cta-actions { flex-direction: column; align-items: stretch; }
+  .cta-actions .btn { justify-content: center; }
+}
+
+.unit-card__link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-bordeaux);
+  text-decoration: none;
+}
+
+.unit-card__link:hover { text-decoration: underline; }
+
+.prose ol { padding-left: var(--space-md); }
+.prose ol li, .prose ul li { margin-bottom: 0.35rem; }
+
+/* =========================================================
+   Cartão da autora (posts do blog)
+   ========================================================= */
+.author-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+  padding: var(--space-md);
+  background: var(--color-cream-warm);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+}
+
+.author-card img {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.author-card__text strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-sage-dark);
+}
+
+.author-card__text span {
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .author-card { flex-direction: column; text-align: center; }
+  .author-card__text { align-items: center; }
+}
+
+/* =========================================================
+   Grade de procedimentos (uma imagem por procedimento)
+   ========================================================= */
+.proc-familia {
+  margin: var(--space-xl) 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-sage-dark);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.proc-familia:first-of-type { margin-top: var(--space-lg); }
+
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--space-md);
+}
+
+.proc-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-cream);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow var(--t-base), transform var(--t-base);
+}
+
+.proc-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.proc-card__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--color-cream-warm);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.proc-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: var(--space-sm) var(--space-sm) var(--space-md);
+}
+
+.proc-card__body h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  color: var(--color-sage-dark);
+}
+
+.proc-card__body p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-soft);
+}
+
+.proc-card__tag {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bordeaux);
+  background: var(--color-rose);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+}
+
+.proc-nota {
+  margin-top: var(--space-lg);
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+  max-width: 46rem;
+}
