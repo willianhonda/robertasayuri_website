@@ -38,7 +38,7 @@ python3 -m http.server 8000   # http://localhost:8000/
 
 ```bash
 python3 scripts/atualizar-foto-dra.py ~/Downloads/foto.jpg [--foco cima|baixo]
-# regenerates dra-roberta-sayuri-medica-retrato-{md,lg}.{jpg,webp} (4:5, home hero); no HTML change needed
+# regenerates dra-roberta-sayuri-consultorio-{md,lg}.{jpg,webp} (4:5, home hero); no HTML change needed
 
 python3 scripts/foto-procedimento.py --listar
 python3 scripts/foto-procedimento.py <slug> ~/Downloads/foto.jpg

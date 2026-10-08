@@ -288,10 +288,10 @@ python3 scripts/atualizar-foto-dra.py ~/Downloads/nova-foto.jpg
 Isso regenera, com recorte central 4:5:
 
 ```
-assets/img/photos/dra-roberta-sayuri-medica-retrato-md.jpg    480 x 600
-assets/img/photos/dra-roberta-sayuri-medica-retrato-md.webp   480 x 600
-assets/img/photos/dra-roberta-sayuri-medica-retrato-lg.jpg    800 x 1000
-assets/img/photos/dra-roberta-sayuri-medica-retrato-lg.webp   800 x 1000
+assets/img/photos/dra-roberta-sayuri-consultorio-md.jpg    480 x 600
+assets/img/photos/dra-roberta-sayuri-consultorio-md.webp   480 x 600
+assets/img/photos/dra-roberta-sayuri-consultorio-lg.jpg    800 x 1000
+assets/img/photos/dra-roberta-sayuri-consultorio-lg.webp   800 x 1000
 ```
 
 Se o enquadramento sair ruim, use `--foco cima` ou `--foco baixo`. Nenhum HTML precisa ser alterado.
@@ -304,7 +304,7 @@ Existem três fotos originais dela no repositório: o retrato de jaleco, a foto 
 
 | Arquivo | Origem | Formato | Onde aparece |
 |---|---|---|---|
-| `dra-roberta-sayuri-medica-retrato-*` | original | 4:5 | Hero da home, topo de /sobre/ |
+| `dra-roberta-sayuri-retrato-jaleco-*` | original | 4:5 | Topo de /sobre/ |
 | `dra-roberta-busto-*` | recorte do retrato | 1:1 | Galeria de /sobre/, /atendimentos/cuidados-com-a-pele/, /sjc/ |
 | `dra-roberta-avatar-*` | recorte do retrato | 1:1 pequeno | Cartão da autora nos três posts do blog |
 | `dra-procedimentos-foco-*` | original | 4:5 | Bloco "Sobre a médica" na home |
@@ -411,10 +411,9 @@ Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possí
 ### Fotos novas (assets/img/photos/, JPG + WebP, sem EXIF/GPS)
 | Arquivo | Onde aparece |
 |---|---|
-| `dra-roberta-sayuri-medica-retrato-*` | Hero da home e imagem OG (foto real no Espaço Vitale) |
+| `dra-roberta-sayuri-consultorio-*` | Capa da home e imagem OG |
 | `dra-roberta-sayuri-consultorio-sjc-*` | Topo de /consulta-particular/ |
 | `espaco-vitale-recepcao-*`, `espaco-vitale-sala-de-espera-*`, `dra-roberta-sayuri-sala-de-consulta-espaco-vitale-*`, `espaco-vitale-sala-de-procedimentos-*` | Galeria de /sjc/ |
-| `dra-roberta-sayuri-consultorio-*` | Topo de /sobre/ |
 | `dra-roberta-sayuri-espaco-vitale-sao-jose-dos-campos-*` | Topo de /sjc/ |
 | `dra-roberta-sayuri-procedimento-injetavel-*` | Galeria de /sobre/ e topo de /estetica-sjc/ (recortada para tirar paciente e instrutor) |
 | `dra-roberta-sayuri-marcacao-procedimento-pele-*` | Galeria de /guaianases/ |
@@ -427,3 +426,4 @@ Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possí
 - Galeria corrigida: fotos paisagem agora preenchem a linha quando há um retrato ao lado.
 - Nova fachada do CEMID (pintura verde) em /guaianases/ e /contato/; foto da Dra. na entrada do CEMID no topo de /guaianases/ e na faixa de /sobre/. A fachada antiga foi removida.
 - Mais variedade de fotos: /melasma-manchas-sjc/, /acne-sjc/ e /cuidados-com-as-unhas/ ganharam fotos do Espaço Vitale no lugar das fotos de preparo, que se repetiam.
+- Capa da home: foto de vestido rosa (`dra-roberta-sayuri-consultorio-*`). Topo de /sobre/: retrato original de jaleco (`dra-roberta-sayuri-retrato-jaleco-*`). O script `atualizar-foto-dra.py` agora regrava a foto da capa (`dra-roberta-sayuri-consultorio-*`).

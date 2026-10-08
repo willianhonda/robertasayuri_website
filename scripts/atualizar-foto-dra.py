@@ -9,10 +9,10 @@ Uso:
 Gera, em assets/img/photos/, os quatro arquivos que o site usa no hero da
 home, no bloco "Sobre a médica" e na página /sobre/:
 
-    dra-roberta-sayuri-medica-retrato-md.jpg    480 x 600
-    dra-roberta-sayuri-medica-retrato-md.webp   480 x 600
-    dra-roberta-sayuri-medica-retrato-lg.jpg    800 x 1000
-    dra-roberta-sayuri-medica-retrato-lg.webp   800 x 1000
+    dra-roberta-sayuri-consultorio-md.jpg    480 x 600
+    dra-roberta-sayuri-consultorio-md.webp   480 x 600
+    dra-roberta-sayuri-consultorio-lg.jpg    800 x 1000
+    dra-roberta-sayuri-consultorio-lg.webp   800 x 1000
 
 O recorte é central, na proporção 4:5. Se o enquadramento ficar ruim, use
 --foco cima  ou  --foco baixo  para deslocar o corte na vertical.
@@ -69,8 +69,8 @@ def main():
     os.makedirs(DESTINO, exist_ok=True)
     for sufixo, (w, h) in TAMANHOS.items():
         versao = img.resize((w, h), Image.LANCZOS)
-        jpg = os.path.join(DESTINO, "dra-roberta-sayuri-medica-retrato-%s.jpg" % sufixo)
-        webp = os.path.join(DESTINO, "dra-roberta-sayuri-medica-retrato-%s.webp" % sufixo)
+        jpg = os.path.join(DESTINO, "dra-roberta-sayuri-consultorio-%s.jpg" % sufixo)
+        webp = os.path.join(DESTINO, "dra-roberta-sayuri-consultorio-%s.webp" % sufixo)
         versao.save(jpg, "JPEG", quality=86, optimize=True, progressive=True)
         versao.save(webp, "WEBP", quality=82, method=6)
         print("gerado: %s (%d KB)" % (jpg, os.path.getsize(jpg) // 1024))
