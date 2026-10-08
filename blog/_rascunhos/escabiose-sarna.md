@@ -7,6 +7,7 @@ categoria: Cuidados com a pele
 data: 2026-10-08
 instagram: https://www.instagram.com/reel/DdHHgImR1AA/
 sobre: Escabiose
+capa_texto: Escabiose (sarna)
 sobre_tipo: MedicalCondition
 servicos: cuidados com a pele|/atendimentos/cuidados-com-a-pele/
 ---

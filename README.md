@@ -442,3 +442,9 @@ Regras para os artigos: sem "dermatologista" ou "especialista" como título dela
 
 ### Artigos de 08/10/2026 (rascunhos aguardando revisão da Dra.)
 Molusco contagioso, escabiose (sarna), pitiríase rósea e Profhilo, todos ampliados a partir de posts do Instagram, com referências (SBD, AAD, DermNet e estudo clínico no caso do Profhilo).
+
+### Capa dos artigos
+`python3 scripts/capa-post.py <slug>` gera uma capa com a identidade do site (1200x675) em `assets/img/blog/<slug>-capa.jpg/.webp`. Com uma foto: `python3 scripts/capa-post.py <slug> ~/Downloads/foto.jpg`. Depois rode `scripts/novo-post.py` no rascunho para a capa entrar no card, no topo do artigo e no compartilhamento. Use só fotos próprias, sem paciente identificável.
+
+### Procedimentos (SEO e chatbots)
+Cada card em /atendimentos/procedimentos-esteticos/ e /estetica-sjc/ tem um nome completo (ex.: "Toxina botulínica para bruxismo"), uma âncora (`#botox-bruxismo`) e entra numa lista `ItemList` de `MedicalProcedure` no JSON-LD. A mesma lista está nos nós `Physician` das duas unidades e no `llms.txt`. Ao incluir ou remover um procedimento, atualize os três lugares.

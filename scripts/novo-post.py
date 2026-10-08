@@ -143,6 +143,18 @@ def gerar(caminho):
     palavras = len(re.sub(r"<[^>]+>", " ", corpo).split())
     leitura = max(3, math.ceil(palavras / 200))
     titulo_seo = meta.get("titulo_seo") or meta["titulo"]
+    e = html.escape
+
+    # capa (gerada por scripts/capa-post.py); sem ela, card com a mandala e og:image padrão
+    capa_rel = "/assets/img/blog/%s-capa" % slug
+    tem_capa = os.path.exists(os.path.join(RAIZ, capa_rel.lstrip("/") + ".jpg"))
+    og_img, og_w, og_h = (BASE + capa_rel + ".jpg", 1200, 675) if tem_capa else (OG, 1200, 630)
+    og_alt = ("Capa do artigo: " + meta["titulo"]) if tem_capa else \
+        "Dra. Roberta Sayuri, médica (CRM-SP 213495), com consultas em Guaianases (São Paulo) e São José dos Campos"
+
+    def picture(alt, sizes, lazy=True):
+        return ('<picture><source type="image/webp" srcset="{c}.webp"><img src="{c}.jpg" alt="{a}" width="1200" height="675"'
+                ' sizes="{s}"{l}></picture>').format(c=capa_rel, a=e(alt), s=sizes, l=' loading="lazy"' if lazy else "")
 
     modelo = open(MODELO, encoding="utf-8").read()
     head_comum = modelo[modelo.index('  <link rel="icon"'):modelo.index('<script type="application/ld+json">')]
@@ -153,7 +165,7 @@ def gerar(caminho):
     post = {
         "@type": "BlogPosting", "@id": url + "#artigo", "headline": meta["titulo"],
         "description": meta["descricao"], "datePublished": meta["data"], "dateModified": meta["revisado"],
-        "inLanguage": "pt-BR", "image": OG, "wordCount": palavras,
+        "inLanguage": "pt-BR", "image": og_img, "wordCount": palavras,
         "mainEntityOfPage": {"@type": "WebPage", "@id": url},
         "isPartOf": {"@id": BASE + "/#website"},
         "author": {"@type": "Person", "@id": BASE + "/sobre/#medica", "name": "Dra. Roberta Sayuri",
@@ -185,7 +197,9 @@ def gerar(caminho):
         insta = ('\n\n        <p>Este artigo amplia um conteúdo publicado no '
                  '<a href="%s" target="_blank" rel="noopener">Instagram da Dra. Roberta Sayuri</a>.</p>') % meta["instagram"]
 
-    e = html.escape
+    figura = ""
+    if tem_capa:
+        figura = '        <figure class="post-capa">%s</figure>\n\n' % picture(meta["titulo"], "(max-width: 768px) 100vw, 720px", lazy=False)
     pagina = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -204,9 +218,9 @@ def gerar(caminho):
   <meta property="og:description" content="{desc}">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{og}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Dra. Roberta Sayuri, médica (CRM-SP 213495), com consultas em Guaianases (São Paulo) e São José dos Campos">
+  <meta property="og:image:width" content="{ogw}">
+  <meta property="og:image:height" content="{ogh}">
+  <meta property="og:image:alt" content="{ogalt}">
   <meta property="article:published_time" content="{data}">
   <meta property="article:modified_time" content="{rev}">
 
@@ -235,7 +249,7 @@ def gerar(caminho):
       <div class="container">
         <article class="prose reveal" style="margin: 0 auto;">
 
-{corpo}
+{figura}{corpo}
 
 {onde}{insta}
 
@@ -255,7 +269,7 @@ def gerar(caminho):
     </section>
 {cta}  </main>
 
-{rod}""".format(tseo=e(titulo_seo), desc=e(meta["descricao"]), url=url, og=OG, data=meta["data"],
+{rod}""".format(tseo=e(titulo_seo), desc=e(meta["descricao"]), url=url, og=og_img, ogw=og_w, ogh=og_h, ogalt=e(og_alt), figura=figura, data=meta["data"],
                 rev=meta["revisado"], head=head_comum, ld=ld, slug=slug, cab=cabecalho, tit=e(meta["titulo"]),
                 cat=e(meta["categoria"]), resumo=e(meta["resumo"]), data_ext=data_extenso(meta["data"]),
                 leitura=leitura, corpo=corpo, onde=onde, insta=insta, autora=AUTORA, cta=cta, rod=rodape)
@@ -270,7 +284,7 @@ def gerar(caminho):
     href = '/blog/%s/' % slug
     card = """          <a class="blog-card reveal" href="{href}">
             <div class="blog-card__cover" aria-hidden="true">
-              <img src="/assets/img/decor-mandala.svg" alt="">
+              {capa}
             </div>
             <div class="blog-card__body">
               <span class="blog-card__category">{cat}</span>
@@ -280,7 +294,7 @@ def gerar(caminho):
             </div>
           </a>
 
-""".format(href=href, cat=e(meta["categoria"]), tit=e(meta["titulo"]), resumo=e(meta["resumo"]), leitura=leitura)
+""".format(href=href, capa=picture("", "(max-width: 768px) 100vw, 380px") if tem_capa else '<img src="/assets/img/decor-mandala.svg" alt="">', cat=e(meta["categoria"]), tit=e(meta["titulo"]), resumo=e(meta["resumo"]), leitura=leitura)
     bloco = re.search(r'          <a class="blog-card reveal" href="%s">.*?</a>\n\n' % re.escape(href), idx, re.S)
     if bloco:
         idx = idx[:bloco.start()] + card + idx[bloco.end():]

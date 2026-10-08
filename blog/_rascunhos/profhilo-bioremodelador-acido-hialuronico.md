@@ -7,6 +7,7 @@ categoria: Procedimentos estéticos
 data: 2026-10-08
 instagram: https://www.instagram.com/reel/DdWk5XvRHxw/
 sobre: Bioremodelação com ácido hialurônico
+capa_texto: Profhilo e qualidade de pele
 sobre_tipo: MedicalProcedure
 servicos: procedimentos estéticos|/atendimentos/procedimentos-esteticos/; procedimentos estéticos em São José dos Campos|/estetica-sjc/
 ---
