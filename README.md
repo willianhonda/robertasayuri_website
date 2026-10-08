@@ -1,6 +1,6 @@
 # Site Dra. Roberta Sayuri — Manual de Deploy
 
-> **Atualização 19/09/2026:** endereço de São José dos Campos corrigido para **Espaço Vitalle, Av. Saga, 108, Jardim Oriente, CEP 12241-200** (o antigo New Worker Tower / Jardim Aquarius saiu do site inteiro). O Linktree saiu de todos os CTAs: agora o botão "Agendar" leva à seção `#agendar`, que tem um botão por unidade apontando direto para o WhatsApp correspondente. Seis páginas novas entraram: `/sjc/`, `/consulta-particular/`, `/queda-de-cabelo-sjc/`, `/acne-sjc/`, `/melasma-manchas-sjc/`, `/estetica-sjc/`.
+> **Atualização 19/09/2026:** endereço de São José dos Campos corrigido para **Espaço Vitale, Av. Saga, 108, Jardim Oriente, CEP 12236-170** (o antigo New Worker Tower / Jardim Aquarius saiu do site inteiro). O Linktree saiu de todos os CTAs: agora o botão "Agendar" leva à seção `#agendar`, que tem um botão por unidade apontando direto para o WhatsApp correspondente. Seis páginas novas entraram: `/sjc/`, `/consulta-particular/`, `/queda-de-cabelo-sjc/`, `/acne-sjc/`, `/melasma-manchas-sjc/`, `/estetica-sjc/`.
 
 Site institucional para **robertasayuri.com.br**, em HTML/CSS/JS puro, pronto para GitHub Pages.
 
@@ -247,7 +247,7 @@ Em caso de dúvidas sobre atualização de conteúdo, basta editar os arquivos `
 ## 🔄 Changelog 19/09/2026
 
 ### Endereço e dados
-- SJC: Espaço Vitalle, Av. Saga, 108, Jardim Oriente, São José dos Campos/SP, CEP 12241-200 (home, /contato/, /sobre/, rodapé de todas as páginas, FAQ, JSON-LD, mapa incorporado, política de privacidade).
+- SJC: Espaço Vitale, Av. Saga, 108, Jardim Oriente, São José dos Campos/SP, CEP 12236-170 (home, /contato/, /sobre/, rodapé de todas as páginas, FAQ, JSON-LD, mapa incorporado, política de privacidade).
 - Zero ocorrências de "New Worker", "Armando", "Cobra", "Aquarius", "linktr.ee", "nota fiscal", "15 minutos", "dermatolog", "especialista" nas páginas públicas.
 - "Nota fiscal" virou "recibo" (atendimento como pessoa física).
 - O caractere travessão foi removido de toda a copy.
@@ -271,7 +271,7 @@ Em caso de dúvidas sobre atualização de conteúdo, basta editar os arquivos `
 ### Pendências marcadas no código
 - **Horário de SJC:** as páginas dizem "durante a semana, com hora marcada". Assim que o horário real estiver confirmado (o perfil no Google mostra quinta-feira, 13h às 18h), trocar o texto e preencher `openingHoursSpecification` da unidade de SJC no JSON-LD da home. Buscar por `CONFIRMAR`.
 - **Preço da consulta (versão B):** o bloco "Valor" das páginas novas traz um comentário HTML com o texto "R$ 289 no Pix ou R$ 299 no cartão". Publicar só com aprovação da Dra., trocando o parágrafo da versão A.
-- **Fotos do Espaço Vitalle:** 8 a 12 fotos (fachada com o número 108, entrada, recepção, sala de consulta, equipamentos), sem pacientes, para /sjc/ e /contato/.
+- **Fotos do Espaço Vitale:** 8 a 12 fotos (fachada com o número 108, entrada, recepção, sala de consulta, equipamentos), sem pacientes, para /sjc/ e /contato/.
 - **Estacionamento e como chegar em SJC:** ainda não descrito no site.
 
 ---
@@ -288,10 +288,10 @@ python3 scripts/atualizar-foto-dra.py ~/Downloads/nova-foto.jpg
 Isso regenera, com recorte central 4:5:
 
 ```
-assets/img/photos/dra-roberta-retrato-md.jpg    480 x 600
-assets/img/photos/dra-roberta-retrato-md.webp   480 x 600
-assets/img/photos/dra-roberta-retrato-lg.jpg    800 x 1000
-assets/img/photos/dra-roberta-retrato-lg.webp   800 x 1000
+assets/img/photos/dra-roberta-sayuri-medica-retrato-md.jpg    480 x 600
+assets/img/photos/dra-roberta-sayuri-medica-retrato-md.webp   480 x 600
+assets/img/photos/dra-roberta-sayuri-medica-retrato-lg.jpg    800 x 1000
+assets/img/photos/dra-roberta-sayuri-medica-retrato-lg.webp   800 x 1000
 ```
 
 Se o enquadramento sair ruim, use `--foco cima` ou `--foco baixo`. Nenhum HTML precisa ser alterado.
@@ -304,7 +304,7 @@ Existem três fotos originais dela no repositório: o retrato de jaleco, a foto 
 
 | Arquivo | Origem | Formato | Onde aparece |
 |---|---|---|---|
-| `dra-roberta-retrato-*` | original | 4:5 | Hero da home, topo de /sobre/ |
+| `dra-roberta-sayuri-medica-retrato-*` | original | 4:5 | Hero da home, topo de /sobre/ |
 | `dra-roberta-busto-*` | recorte do retrato | 1:1 | Galeria de /sobre/, /atendimentos/cuidados-com-a-pele/, /sjc/ |
 | `dra-roberta-avatar-*` | recorte do retrato | 1:1 pequeno | Cartão da autora nos três posts do blog |
 | `dra-procedimentos-foco-*` | original | 4:5 | Bloco "Sobre a médica" na home |
@@ -378,3 +378,49 @@ Além das fotos por procedimento, faltam imagens dela em situação, que hoje se
 **Repetir o essencial na unidade de São José dos Campos**, já que todas as fotos atuais são de Guaianases: fachada com o número 108, recepção, sala de consulta e dois retratos dela no espaço.
 
 Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possível, sem filtro pesado.
+
+
+---
+
+## 🔄 Changelog 08/10/2026 (SEO técnico, SEO local e GEO)
+
+### Dados corrigidos
+- CEP de SJC: **12236-170** (Av. Saga, Jardim Oriente, conferido no ViaCEP). O 12241-200 pertence à Rua Emílio Marelo, Jardim das Indústrias.
+- Nome do local em SJC: **Espaço Vitale** (com um L), como na placa da recepção. Confirmado pela cliente.
+- Guaianases passa a citar o nome do local, **CEMID, Centro Médico Integrado**, e o CEP 08411-000.
+
+### Arquitetura
+- Nova página **/guaianases/**, simétrica à /sjc/: resumo da unidade, como chegar (CPTM Linha 11-Coral, ônibus, carro), mapa, galeria e FAQ.
+- /sjc/: foto no Espaço Vitale, mapa, distâncias a partir de Jacareí, Caçapava e Taubaté, e FAQ nova.
+- Links internos: rodapé com as duas unidades, páginas de atendimento → unidades, posts do blog → atendimentos e unidades.
+
+### Dados estruturados
+- Grafo único com `@id`: `Person` (médica), um `Physician` por unidade, `WebSite`, `WebPage`, `ProfilePage`, `ContactPage` e `BlogPosting` com autora identificada. Sem `priceRange` e sem especialidade médica declarada.
+
+### Outros
+- Home: H1 descritivo; o slogan virou parágrafo com o mesmo visual.
+- `llms.txt` com os fatos oficiais para sistemas de IA.
+- Nova imagem Open Graph (`og-dra-roberta-sayuri.jpg`) com as duas unidades.
+- sitemap.xml com /guaianases/ e imagens.
+- 404 com `noindex`.
+- Logos com dimensões declaradas.
+- Títulos e descriptions ajustados (até 160 caracteres).
+- Resumo dos procedimentos alinhado à lista real. "Preenchedores" saiu porque não consta da lista de procedimentos.
+
+### Fotos novas (assets/img/photos/, JPG + WebP, sem EXIF/GPS)
+| Arquivo | Onde aparece |
+|---|---|
+| `dra-roberta-sayuri-medica-retrato-*` | Hero da home e imagem OG (foto real no Espaço Vitale) |
+| `dra-roberta-sayuri-consultorio-sjc-*` | Topo de /consulta-particular/ |
+| `espaco-vitale-recepcao-*`, `espaco-vitale-sala-de-espera-*`, `dra-roberta-sayuri-sala-de-consulta-espaco-vitale-*`, `espaco-vitale-sala-de-procedimentos-*` | Galeria de /sjc/ |
+| `dra-roberta-sayuri-consultorio-*` | Topo de /sobre/ |
+| `dra-roberta-sayuri-espaco-vitale-sao-jose-dos-campos-*` | Topo de /sjc/ |
+| `dra-roberta-sayuri-procedimento-injetavel-*` | Galeria de /sobre/ e topo de /estetica-sjc/ (recortada para tirar paciente e instrutor) |
+| `dra-roberta-sayuri-marcacao-procedimento-pele-*` | Galeria de /guaianases/ |
+
+### Atualização 08/10/2026 (tarde)
+- Horário de SJC: **sextas-feiras, das 13h às 17h** (site, rodapé, FAQ, JSON-LD e llms.txt). Pendência `CONFIRMAR` encerrada.
+- Pós-graduação em Dermatologia Clínica e Cosmética pela Inspirali, divulgada no formato da Resolução CFM 2.336/2023 (art. 13): "pós-graduada … NÃO ESPECIALISTA".
+- Instagram @dra.roberta.sayuri no rodapé e no `sameAs`. Perfis do Google das duas unidades linkados nas páginas de unidade e no `sameAs`.
+- HTTPS forçado no GitHub Pages.
+- Galeria corrigida: fotos paisagem agora preenchem a linha quando há um retrato ao lado.

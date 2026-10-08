@@ -491,7 +491,22 @@ p:last-child { margin-bottom: 0; }
   background: var(--color-bordeaux);
 }
 
+/* H1 descritivo (entidade + local); o slogan visual fica em .hero__title */
+.hero__h1 {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  color: var(--color-bordeaux);
+  margin: 0;
+}
+
 .hero__title {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  color: var(--color-sage-dark);
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-md);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 300;
@@ -673,6 +688,14 @@ p:last-child { margin-bottom: 0; }
 
 .pillar__icon svg { width: 28px; height: 28px; }
 
+.pillar h3 {
+  font-size: 1.125rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.pillar h3,
 .pillar h4 {
   margin-bottom: var(--space-2xs);
   color: var(--color-sage-dark);
@@ -1438,6 +1461,15 @@ strong:where(.about-credentials__value strong, .prose p strong) {
   aspect-ratio: 4 / 5;
 }
 
+/* Itens paisagem ao lado de um retrato: a foto preenche a altura da linha */
+.gallery__item picture {
+  height: 100%;
+}
+
+.gallery__item img {
+  height: 100%;
+}
+
 .gallery__item figcaption {
   position: absolute;
   bottom: 0;
@@ -1813,4 +1845,9 @@ strong:where(.about-credentials__value strong, .prose p strong) {
   font-size: 0.85rem;
   color: var(--color-text-mute);
   max-width: 46rem;
+}
+
+.featured-photo--portrait picture,
+.featured-photo--portrait img {
+  aspect-ratio: 4 / 5;
 }
