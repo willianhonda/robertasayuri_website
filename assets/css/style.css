@@ -363,6 +363,7 @@ p:last-child { margin-bottom: 0; }
   }
 
   .nav__menu.is-open .nav__link {
+    display: block;
     padding: var(--space-sm) 0;
     border-bottom: 1px solid var(--color-line);
     font-size: 1rem;
@@ -624,6 +625,7 @@ p:last-child { margin-bottom: 0; }
   }
   .hero__visual {
     order: -1;
+    width: 100%;
     max-width: 380px;
     margin: 0 auto;
     border-radius: 200px 200px 20px 20px;
@@ -1144,12 +1146,15 @@ p:last-child { margin-bottom: 0; }
   border: 1px solid var(--color-line);
   border-radius: 16px;
   box-shadow: var(--shadow-lg);
-  transform: translateY(120%);
-  transition: transform var(--t-slow);
+  transform: translateY(calc(100% + 140px));
+  visibility: hidden;
+  transition: transform var(--t-slow), visibility 0s linear var(--t-slow);
 }
 
 .cookie-banner.is-visible {
   transform: translateY(0);
+  visibility: visible;
+  transition: transform var(--t-slow), visibility 0s;
 }
 
 .cookie-banner__text {
@@ -1911,5 +1916,46 @@ strong:where(.about-credentials__value strong, .prose p strong) {
 @media (max-width: 768px) {
   .page-hero--compact {
     padding: var(--space-lg) 0 var(--space-md);
+  }
+}
+
+/* =========================================================
+   Ajustes de celular (auditoria mobile 08/10/2026)
+   ========================================================= */
+@media (max-width: 600px) {
+  /* foto do topo menor, para título e botão aparecerem na primeira tela */
+  .hero__visual {
+    max-width: 280px;
+  }
+  .hero__grid {
+    gap: var(--space-md);
+  }
+  .hero {
+    padding-top: var(--space-lg);
+  }
+
+  /* textos-etiqueta legíveis (mínimo 12px) */
+  .nav__brand-tag,
+  .unit-card__badge,
+  .blog-card__category,
+  .proc-card__tag {
+    font-size: 0.75rem;
+  }
+
+  /* área de toque dos links do rodapé e dos telefones */
+  .footer-col a,
+  .footer-bottom__legal a,
+  .contact-info__value a {
+    display: inline-block;
+    padding: 6px 0;
+  }
+
+  /* aviso de cookies mais compacto */
+  .cookie-banner {
+    padding: var(--space-sm);
+  }
+  .cookie-banner__text {
+    font-size: 0.8rem;
+    margin-bottom: var(--space-xs);
   }
 }

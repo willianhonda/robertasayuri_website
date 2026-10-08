@@ -54,17 +54,25 @@
   if (banner) {
     const consent = localStorage.getItem(COOKIE_KEY);
     if (!consent) {
-      setTimeout(function () { banner.classList.add('is-visible'); }, 1200);
+      setTimeout(function () {
+        banner.classList.add('is-visible');
+        document.body.classList.add('cookie-aberto');
+      }, 1200);
     }
+
+    var fechaBanner = function () {
+      banner.classList.remove('is-visible');
+      document.body.classList.remove('cookie-aberto');
+    };
 
     if (accept) accept.addEventListener('click', function () {
       localStorage.setItem(COOKIE_KEY, 'accepted');
-      banner.classList.remove('is-visible');
+      fechaBanner();
     });
 
     if (decline) decline.addEventListener('click', function () {
       localStorage.setItem(COOKIE_KEY, 'declined');
-      banner.classList.remove('is-visible');
+      fechaBanner();
     });
   }
 
