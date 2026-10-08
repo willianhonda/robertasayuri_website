@@ -34,6 +34,10 @@ python3 -m http.server 8000   # http://localhost:8000/
 - City strategy: no doorway pages per city. Nearby cities (Jacareí, Caçapava, Taubaté; Zona Leste neighborhoods and CPTM Linha 11 cities) are covered with real access info inside `/sjc/` and `/guaianases/`.
 - **Images:** photos live in `assets/img/photos/` as `-md`/`-lg` pairs in both JPG and WebP, used through `<picture>`. Procedure cards use SVG placeholders in `assets/img/procedimentos/<slug>.svg`. These appear on `/atendimentos/procedimentos-esteticos/` and `/estetica-sjc/`.
 
+## Blog
+
+Posts are generated from Markdown drafts: `python3 scripts/novo-post.py blog/_rascunhos/<slug>.md` (or `--todos`). It writes `blog/<slug>/index.html` (template: header/footer/CTA copied from `blog/acne-adulta-mitos-verdades/index.html`; BlogPosting + BreadcrumbList + FAQPage JSON-LD), upserts the card at the top of `/blog/`, and appends to `sitemap.xml` and `llms.txt`. It is idempotent and has no dependencies. `blog/_rascunhos/` is not published (Jekyll ignores `_` folders). Edit the draft and regenerate rather than editing the generated HTML. Medical posts must be reviewed by the doctor before pushing.
+
 ## Image scripts (need Pillow: `pip3 install pillow`)
 
 ```bash

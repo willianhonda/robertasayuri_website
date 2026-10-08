@@ -1855,3 +1855,14 @@ strong:where(.about-credentials__value strong, .prose p strong) {
 .featured-photo--portrait img {
   aspect-ratio: 4 / 5;
 }
+
+/* Autoria e data nos artigos do blog */
+.post-meta {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--color-text-mute);
+}
+
+.post-meta a {
+  color: inherit;
+}

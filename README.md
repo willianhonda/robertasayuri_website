@@ -427,3 +427,18 @@ Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possí
 - Nova fachada do CEMID (pintura verde) em /guaianases/ e /contato/; foto da Dra. na entrada do CEMID no topo de /guaianases/ e na faixa de /sobre/. A fachada antiga foi removida.
 - Mais variedade de fotos: /melasma-manchas-sjc/, /acne-sjc/ e /cuidados-com-as-unhas/ ganharam fotos do Espaço Vitale no lugar das fotos de preparo, que se repetiam.
 - Capa da home: foto de vestido rosa (`dra-roberta-sayuri-consultorio-*`). Topo de /sobre/: retrato original de jaleco (`dra-roberta-sayuri-retrato-jaleco-*`). O script `atualizar-foto-dra.py` agora regrava a foto da capa (`dra-roberta-sayuri-consultorio-*`).
+
+---
+
+## ✍️ Como publicar um artigo no blog
+
+1. Crie `blog/_rascunhos/<slug>.md` (copie um dos rascunhos existentes). O cabeçalho tem título, descrição (até 160 caracteres), resumo, categoria, data, link do post no Instagram e serviços relacionados. O texto é Markdown simples. A seção `## Perguntas frequentes` (com `###` para cada pergunta) vira FAQ no Google.
+2. Rode `python3 scripts/novo-post.py blog/_rascunhos/<slug>.md`. O script gera `blog/<slug>/index.html` e coloca o card no topo de /blog/, a URL no `sitemap.xml` e a linha no `llms.txt`. Rodar de novo atualiza sem duplicar.
+3. A Dra. revisa o texto antes do push. É conteúdo médico, assinado por ela.
+
+A pasta `blog/_rascunhos/` não é publicada (o GitHub Pages ignora pastas que começam com `_`).
+
+Regras para os artigos: sem "dermatologista" ou "especialista" como título dela, sem preço, sem antes e depois, sem promessa de resultado. Sempre incluir as referências.
+
+### Artigos de 08/10/2026 (rascunhos aguardando revisão da Dra.)
+Molusco contagioso, escabiose (sarna), pitiríase rósea e Profhilo, todos ampliados a partir de posts do Instagram, com referências (SBD, AAD, DermNet e estudo clínico no caso do Profhilo).
