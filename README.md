@@ -448,3 +448,6 @@ Molusco contagioso, escabiose (sarna), pitiríase rósea e Profhilo, todos ampli
 
 ### Procedimentos (SEO e chatbots)
 Cada card em /atendimentos/procedimentos-esteticos/ e /estetica-sjc/ tem um nome completo (ex.: "Toxina botulínica para bruxismo"), uma âncora (`#botox-bruxismo`) e entra numa lista `ItemList` de `MedicalProcedure` no JSON-LD. A mesma lista está nos nós `Physician` das duas unidades e no `llms.txt`. Ao incluir ou remover um procedimento, atualize os três lugares.
+
+### Página /agendar/ (link da bio do Instagram)
+Página enxuta com as duas unidades e o botão de WhatsApp de cada uma logo no topo. Link da bio: `https://www.robertasayuri.com.br/agendar/?utm_source=instagram&utm_medium=bio`. A mensagem do WhatsApp chega marcada "[instagram / agendar]". Também está no rodapé de todas as páginas.

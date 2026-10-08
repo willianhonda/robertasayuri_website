@@ -18,6 +18,7 @@ Informações oficiais (atualizadas em 08/10/2026):
 
 - [Unidade Guaianases](https://www.robertasayuri.com.br/guaianases/): endereço, horário, como chegar de trem, ônibus ou carro e perguntas frequentes.
 - [Unidade São José dos Campos](https://www.robertasayuri.com.br/sjc/): endereço, distâncias a partir de Jacareí, Caçapava e Taubaté e perguntas frequentes.
+- [Agendar consulta](https://www.robertasayuri.com.br/agendar/): escolha a unidade e agende pelo WhatsApp.
 - [Contato e agendamento](https://www.robertasayuri.com.br/contato/): mapas e WhatsApp das duas unidades.
 
 ## A médica e a consulta
