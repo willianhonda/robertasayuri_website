@@ -337,7 +337,8 @@ Cada procedimento tem a sua própria imagem, em `assets/img/procedimentos/`. Hoj
 
 | Slug do arquivo | Procedimento | Foto real sugerida |
 |---|---|---|
-| `botox-terco-superior` | Toxina botulínica, terço superior | Seringa na mão enluvada, close, sem rosto de paciente |
+| `botox-terco-inferior` | Toxina botulínica, terço inferior | Seringa na mão enluvada, close, sem rosto de paciente |
+| `botox-full-face` | Toxina botulínica, face completa | Bandeja montada para aplicação em face completa |
 | `botox-terco-superior-medio` | Toxina botulínica, superior e médio | Bandeja montada com seringas e marcação |
 | `botox-bruxismo` | Toxina botulínica para bruxismo | Frasco e diluição em close |
 | `botox-hiperidrose-axilar` | Toxina botulínica para hiperidrose | Material preparado sobre campo estéril |
@@ -362,7 +363,7 @@ Cada procedimento tem a sua própria imagem, em `assets/img/procedimentos/`. Hoj
 
 ```bash
 python3 scripts/foto-procedimento.py --listar
-python3 scripts/foto-procedimento.py botox-terco-superior ~/Downloads/foto-botox.jpg
+python3 scripts/foto-procedimento.py botox-terco-inferior ~/Downloads/foto-botox.jpg
 ```
 
 O script recorta em 4:3, gera JPG e WebP em 800x600 e troca o `<img>` da ilustração por um `<picture>` nas duas páginas, mantendo o SVG no repositório. Dá para trocar uma de cada vez, conforme as fotos forem chegando: ilustração e foto convivem na mesma grade sem quebrar o layout.
