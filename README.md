@@ -425,3 +425,5 @@ Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possí
 - Instagram @dra.roberta.sayuri no rodapé e no `sameAs`. Perfis do Google das duas unidades linkados nas páginas de unidade e no `sameAs`.
 - HTTPS forçado no GitHub Pages.
 - Galeria corrigida: fotos paisagem agora preenchem a linha quando há um retrato ao lado.
+- Nova fachada do CEMID (pintura verde) em /guaianases/ e /contato/; foto da Dra. na entrada do CEMID no topo de /guaianases/ e na faixa de /sobre/. A fachada antiga foi removida.
+- Mais variedade de fotos: /melasma-manchas-sjc/, /acne-sjc/ e /cuidados-com-as-unhas/ ganharam fotos do Espaço Vitale no lugar das fotos de preparo, que se repetiam.
