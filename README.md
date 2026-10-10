@@ -431,7 +431,8 @@ Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possí
 ### Atualização 10/10/2026
 - Horário de SJC passa a **sextas-feiras, das 13h às 18h** (texto, rodapé de todas as páginas, FAQ, JSON-LD `closes: 18:00` e llms.txt), igual ao Perfil da Empresa no Google. O perfil de SJC também foi corrigido para o CEP 12236-170.
 - Search Console (propriedade de domínio) ativo; sitemap processado em 08/10. Consultas como "cemid guaianases" e "rua saturnino pereira 317" tinham impressões e nenhum clique, então os títulos e descrições de /guaianases/ e /contato/ agora citam o CEMID, os endereços e os horários.
-- Horário de Guaianases passa a **sábados, das 10h às 18h** (texto, rodapé de todas as páginas, FAQ, JSON-LD `opens: 10:00` / `closes: 18:00` e llms.txt). O horário de resposta da recepção pelo WhatsApp (seg. a sex. 8h–18h, sáb. 8h–17h) não mudou.
+- Horário de Guaianases passa a **sábados, das 10h às 18h** (texto, rodapé de todas as páginas, FAQ, JSON-LD `opens: 10:00` / `closes: 18:00` e llms.txt).
+- Recepção pelo WhatsApp: o site agora diz que respondemos todos os dias, exceto de madrugada (antes: seg. a sex. 8h–18h, sáb. 8h–17h).
 
 ---
 
