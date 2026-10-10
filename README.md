@@ -433,6 +433,7 @@ Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possí
 - Search Console (propriedade de domínio) ativo; sitemap processado em 08/10. Consultas como "cemid guaianases" e "rua saturnino pereira 317" tinham impressões e nenhum clique, então os títulos e descrições de /guaianases/ e /contato/ agora citam o CEMID, os endereços e os horários.
 - Horário de Guaianases passa a **sábados, das 10h às 18h** (texto, rodapé de todas as páginas, FAQ, JSON-LD `opens: 10:00` / `closes: 18:00` e llms.txt).
 - Recepção pelo WhatsApp: o site agora diz que respondemos todos os dias, exceto de madrugada (antes: seg. a sex. 8h–18h, sáb. 8h–17h).
+- Novas páginas de tema da unidade Guaianases, no modelo das de SJC e com texto próprio: /acne-guaianases/, /melasma-manchas-guaianases/ e /queda-de-cabelo-guaianases/ (BreadcrumbList, MedicalWebPage e FAQPage). Linkadas a partir de /guaianases/ (seção "Atendimentos em Guaianases") e das páginas equivalentes de SJC; incluídas no sitemap e no llms.txt. **Pendente: revisão médica da Dra. antes de divulgar.**
 
 ---
 
