@@ -1725,6 +1725,13 @@ strong:where(.about-credentials__value strong, .prose p strong) {
 
 .unit-card__link:hover { text-decoration: underline; }
 
+.unit-card__topics {
+  margin-top: var(--space-sm);
+  font-size: 0.88rem;
+  color: var(--color-text-soft);
+}
+.unit-card__topics a { color: var(--color-bordeaux); }
+
 .prose ol { padding-left: var(--space-md); }
 .prose ol li, .prose ul li { margin-bottom: 0.35rem; }
 

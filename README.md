@@ -435,6 +435,9 @@ Entregar em JPG, lado maior de pelo menos 2000 px, luz natural sempre que possí
 - Recepção pelo WhatsApp: o site agora diz que respondemos todos os dias, exceto de madrugada (antes: seg. a sex. 8h–18h, sáb. 8h–17h).
 - Novas páginas de tema da unidade Guaianases, no modelo das de SJC e com texto próprio: /acne-guaianases/, /melasma-manchas-guaianases/ e /queda-de-cabelo-guaianases/ (BreadcrumbList, MedicalWebPage e FAQPage). Linkadas a partir de /guaianases/ (seção "Atendimentos em Guaianases") e das páginas equivalentes de SJC; incluídas no sitemap e no llms.txt. Textos aprovados em 10/10/2026.
 
+### Atualização 11/10/2026
+- Links internos para as páginas de tema: a home (cartões das unidades) e /atendimentos/ ("Atendimentos por unidade") agora apontam para acne, melasma e manchas, queda de cabelo (Guaianases e SJC) e estética (SJC). Isso ajuda páginas que estavam como "Detectada, mas não indexada" no Search Console.
+
 ---
 
 ## ✍️ Como publicar um artigo no blog
