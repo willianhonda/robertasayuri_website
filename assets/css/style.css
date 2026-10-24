@@ -1445,6 +1445,11 @@ strong:where(.about-credentials__value strong, .prose p strong) {
   gap: var(--space-md);
 }
 
+/* Galeria de 6 fotos (3 paisagem + 3 retrato): no máximo 3 por linha */
+.gallery--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+
 .gallery__item {
   position: relative;
   margin: 0;

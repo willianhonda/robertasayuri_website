@@ -45,20 +45,43 @@
     });
   });
 
-  /* ---------- 4. Cookie banner (LGPD) ---------- */
+  /* ---------- 4. Cookie banner (LGPD) e Google Analytics 4 ---------- */
+  // ID da propriedade GA4 (G-XXXXXXXXXX). Vazio = analytics desligado.
+  // O gtag.js só é carregado depois que o visitante aceita os cookies analíticos.
+  const GA_ID = '';
   const COOKIE_KEY = 'rs-cookie-consent';
   const banner   = document.querySelector('[data-cookie-banner]');
   const accept   = document.querySelector('[data-cookie-accept]');
   const decline  = document.querySelector('[data-cookie-decline]');
 
+  const lerConsentimento = function () {
+    try { return localStorage.getItem(COOKIE_KEY); } catch (e) { return null; }
+  };
+  const gravarConsentimento = function (valor) {
+    try { localStorage.setItem(COOKIE_KEY, valor); } catch (e) {}
+  };
+
+  var carregaAnalytics = function () {
+    if (!GA_ID || window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+  };
+
+  if (lerConsentimento() === 'accepted') carregaAnalytics();
+
   if (banner) {
-    const consent = localStorage.getItem(COOKIE_KEY);
-    if (!consent) {
-      setTimeout(function () {
-        banner.classList.add('is-visible');
-        document.body.classList.add('cookie-aberto');
-      }, 1200);
-    }
+    var abreBanner = function () {
+      banner.classList.add('is-visible');
+      document.body.classList.add('cookie-aberto');
+    };
+
+    if (!lerConsentimento()) setTimeout(abreBanner, 1200);
 
     var fechaBanner = function () {
       banner.classList.remove('is-visible');
@@ -66,13 +89,24 @@
     };
 
     if (accept) accept.addEventListener('click', function () {
-      localStorage.setItem(COOKIE_KEY, 'accepted');
+      gravarConsentimento('accepted');
       fechaBanner();
+      carregaAnalytics();
     });
 
     if (decline) decline.addEventListener('click', function () {
-      localStorage.setItem(COOKIE_KEY, 'declined');
+      gravarConsentimento('declined');
       fechaBanner();
+      // Se o analytics já estava carregado, a recusa vale a partir da próxima página
+      if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' });
+    });
+
+    // Link "Alterar preferências de cookies" (Política de Privacidade)
+    document.querySelectorAll('[data-cookie-reset]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        abreBanner();
+      });
     });
   }
 
@@ -106,15 +140,35 @@
     }
   });
 
-  /* ---------- 7. WhatsApp click tracking (placeholder para analytics) ---------- */
-  document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      if (window.gtag) {
-        window.gtag('event', 'whatsapp_click', {
-          event_category: 'engagement',
-          event_label: link.dataset.source || 'unknown'
+  /* ---------- 7. Eventos de clique para o GA4 ---------- */
+  // O clique no WhatsApp (clique_whatsapp) é medido pelo script inline de cada página.
+  const unidadeDaPagina = function () {
+    const p = window.location.pathname;
+    if (/guaianases/.test(p)) return 'guaianases';
+    if (/sjc|sao-jose/.test(p)) return 'sjc';
+    return '';
+  };
+
+  const EVENTOS = [
+    { evento: 'clique_telefone',  teste: /^tel:/ },
+    { evento: 'clique_rota',      teste: /google\.[^/]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps/ },
+    { evento: 'clique_perfil_google', teste: /share\.google|g\.page|kgmid=/ },
+    { evento: 'clique_instagram', teste: /instagram\.com/ }
+  ];
+
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest && e.target.closest('a[href]');
+    if (!link || !window.gtag) return;
+    const href = link.getAttribute('href');
+    for (var i = 0; i < EVENTOS.length; i++) {
+      if (EVENTOS[i].teste.test(href)) {
+        window.gtag('event', EVENTOS[i].evento, {
+          unidade: link.dataset.unidade || unidadeDaPagina(),
+          pagina: window.location.pathname,
+          link_url: href
         });
+        return;
       }
-    });
+    }
   });
 })();

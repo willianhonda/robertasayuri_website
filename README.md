@@ -176,22 +176,23 @@ Quando tiver as licenças/arquivos `.woff2` da Blackline e Nexa:
 
 4. Remova o `<link>` do Google Fonts em cada HTML (opcional, para performance).
 
-### 5. Google Analytics (opcional)
+### 5. Google Analytics 4
 
-O `main.js` já está pronto para `gtag` — basta colar o snippet do GA4 no `<head>` de cada página HTML (logo antes de `</head>`):
+O GA4 é carregado pelo `assets/js/main.js` **só depois que o visitante clica em "Aceitar"** no banner de cookies (LGPD). Para ligar, coloque o ID da propriedade na constante `GA_ID` no topo da seção 4 do `main.js` (ex.: `const GA_ID = 'G-ABC123XYZ';`). Com `GA_ID` vazio, nada é carregado. Não cole o snippet do GA no `<head>` das páginas.
 
-```html
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX', { anonymize_ip: true });
-</script>
-```
+Eventos enviados:
 
-Os cliques no WhatsApp serão automaticamente rastreados como evento `whatsapp_click`.
+| Evento | Quando | Parâmetros |
+|---|---|---|
+| `clique_whatsapp` | clique em qualquer link `a.wa-cta` (script inline de cada página) | `unidade`, `pagina`, `origem`, `campanha` |
+| `clique_telefone` | link `tel:` | `unidade`, `pagina`, `link_url` |
+| `clique_rota` | link do Google Maps | idem |
+| `clique_perfil_google` | link do Perfil da Empresa (`share.google`) | idem |
+| `clique_instagram` | link do Instagram | idem |
+
+No GA4: marque `clique_whatsapp` como **evento principal** (conversão) e registre `unidade`, `origem`, `campanha` e `pagina` como **dimensões personalizadas** (escopo: evento). Vincule também o Search Console à propriedade.
+
+A Política de Privacidade tem o link "alterar preferências de cookies", que reabre o banner (`[data-cookie-reset]`).
 
 ---
 
@@ -461,3 +462,23 @@ Cada card em /atendimentos/procedimentos-esteticos/ e /estetica-sjc/ tem um nome
 
 ### Página /agendar/ (link da bio do Instagram)
 Página enxuta com as duas unidades e o botão de WhatsApp de cada uma logo no topo. Link da bio: `https://www.robertasayuri.com.br/agendar/?utm_source=instagram&utm_medium=bio`. A mensagem do WhatsApp chega marcada "[instagram / agendar]". Também está no rodapé de todas as páginas.
+
+---
+
+## 🔄 Changelog 24/10/2026
+
+### Fotos novas (outubro/2026)
+- `/guaianases/`: a galeria agora tem 6 fotos. Ficaram recepção e sala e entraram 4 fotos da Dra. atendendo no CEMID (dermatoscopia, procedimento, aplicação e atendimento). Elas foram tiradas no CEMID em 12/10, e o GPS das fotos bate com o endereço. A foto de marcação com caneta saiu dessa página e continua em /atendimentos/procedimentos-esteticos/.
+- `/sjc/`: entraram 2 fotos da Dra. atendendo no Espaço Vitale, tiradas em 15/10.
+- As duas galerias usam `gallery gallery--3`, com no máximo 3 fotos por linha.
+- Todas as fotos foram cortadas sem rosto de paciente identificável e sem ficha ou prescrição legível. Os cortes em alta resolução para o Perfil da Empresa ficaram fora do repositório.
+
+### Rastreamento
+- GA4 com consentimento e eventos de clique (veja "5. Google Analytics 4"). O antigo `whatsapp_click` do `main.js` saiu porque duplicava o `clique_whatsapp`.
+- 11 links de WhatsApp em texto não tinham `wa-cta`/`data-unidade`/`data-source`: 4 na home (FAQ), 3 em /contato/, 2 na privacidade e 2 nos termos. Agora todos são rastreados e levam a marcação `[origem / campanha]` na mensagem.
+- **Pendente:** criar a propriedade GA4, colar o ID em `GA_ID`, marcar a conversão e registrar as dimensões.
+
+### Métricas de outubro e diagnóstico de SJC
+- Search Console, de 25/09 a 22/10: 18 cliques, 942 impressões, posição média 7,2. `/sjc/` teve 186 impressões e nenhum clique.
+- Perfil de SJC: 57 pedidos de rota e nenhum clique no site, ligação ou chat. A busca que mais mostrou o perfil foi "dr tatiana buller", outra profissional do Espaço Vitale. Ou seja, quem procura outros profissionais do prédio está achando o perfil da Dra. e pedindo a rota até o endereço. O perfil está completo, com WhatsApp no chat e o site com UTM. O "Completar perfil" do Google é só oferta de anúncio e de Workspace. O que falta a SJC é aparecer para buscas genéricas ("dermatologista sjc" e similares): mais avaliações, fotos novas no perfil e postagens.
+
