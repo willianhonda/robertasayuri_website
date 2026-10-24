@@ -477,7 +477,7 @@ Página enxuta com as duas unidades e o botão de WhatsApp de cada uma logo no t
 - GA4 com consentimento e eventos de clique (veja "5. Google Analytics 4"). O antigo `whatsapp_click` do `main.js` saiu porque duplicava o `clique_whatsapp`.
 - 11 links de WhatsApp em texto não tinham `wa-cta`/`data-unidade`/`data-source`: 4 na home (FAQ), 3 em /contato/, 2 na privacidade e 2 nos termos. Agora todos são rastreados e levam a marcação `[origem / campanha]` na mensagem.
 - GA4 criado em 24/10/2026: conta "Dra. Roberta Sayuri", propriedade robertasayuri.com.br (fuso de São Paulo, BRL), ID `G-QX7GF6W65P`. O compartilhamento opcional de dados com o Google ficou desligado. Retenção de 14 meses e 4 dimensões personalizadas (unidade, origem, campanha, pagina) já configuradas. Testado em produção em 24/10, com page_view e clique_whatsapp chegando (o clique de teste está marcado com origem "teste").
-- **Pendente:** (1) marcar a estrela de `clique_whatsapp` em Admin > Eventos (o evento só aparece na lista até 24 h depois do primeiro clique); (2) vincular o Search Console em Admin > Vinculações de produtos > Search Console. Isso precisa ser feito pela Roberta, que é a proprietária do Search Console. A Roberta (robertairaha@gmail.com) já é Administradora da conta do GA desde 24/10.
+- **Pendente:** (1) marcar a estrela de `clique_whatsapp` em Admin > Eventos (o evento só aparece na lista até 24 h depois do primeiro clique); A Roberta (robertairaha@gmail.com) é Administradora da conta do GA, e o Search Console (domínio robertasayuri.com.br) foi vinculado por ela ao fluxo do site em 24/10.
 
 ### Métricas de outubro e diagnóstico de SJC
 - Search Console, de 25/09 a 22/10: 18 cliques, 942 impressões, posição média 7,2. `/sjc/` teve 186 impressões e nenhum clique.
