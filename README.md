@@ -476,7 +476,7 @@ Página enxuta com as duas unidades e o botão de WhatsApp de cada uma logo no t
 ### Rastreamento
 - GA4 com consentimento e eventos de clique (veja "5. Google Analytics 4"). O antigo `whatsapp_click` do `main.js` saiu porque duplicava o `clique_whatsapp`.
 - 11 links de WhatsApp em texto não tinham `wa-cta`/`data-unidade`/`data-source`: 4 na home (FAQ), 3 em /contato/, 2 na privacidade e 2 nos termos. Agora todos são rastreados e levam a marcação `[origem / campanha]` na mensagem.
-- **Pendente:** criar a propriedade GA4, colar o ID em `GA_ID`, marcar a conversão e registrar as dimensões.
+- GA4 criado em 24/10/2026: conta "Dra. Roberta Sayuri", propriedade robertasayuri.com.br (fuso de São Paulo, BRL), ID `G-QX7GF6W65P`. O compartilhamento opcional de dados com o Google ficou desligado.
 
 ### Métricas de outubro e diagnóstico de SJC
 - Search Console, de 25/09 a 22/10: 18 cliques, 942 impressões, posição média 7,2. `/sjc/` teve 186 impressões e nenhum clique.

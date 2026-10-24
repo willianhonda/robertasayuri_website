@@ -48,7 +48,7 @@
   /* ---------- 4. Cookie banner (LGPD) e Google Analytics 4 ---------- */
   // ID da propriedade GA4 (G-XXXXXXXXXX). Vazio = analytics desligado.
   // O gtag.js só é carregado depois que o visitante aceita os cookies analíticos.
-  const GA_ID = '';
+  const GA_ID = 'G-QX7GF6W65P';
   const COOKIE_KEY = 'rs-cookie-consent';
   const banner   = document.querySelector('[data-cookie-banner]');
   const accept   = document.querySelector('[data-cookie-accept]');
